@@ -1,0 +1,1564 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SWIS | Sebastian Williamson Insurance Solutions – Franklin, TN</title>
+  <meta name="description" content="Sebastian Williamson Insurance Solutions is an independent insurance agency proudly serving Tennessee with personalized coverage for auto, home, life, and commercial needs." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="icon" type="image/x-icon" href="SWIS Round Logo-200px.png">
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy:       #0D2340;
+      --navy-mid:   #163255;
+      --navy-light: #1E4A7A;
+      --gold:       #C8973A;
+      --gold-light: #E0B56A;
+      --cream:      #F8F5EF;
+      --cream-dark: #EDE8DE;
+      --text-dark:  #0D1E30;
+      --text-mid:   #3D5470;
+      --text-light: #7A90A8;
+      --white:      #FFFFFF;
+      --section-gap: 6rem;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      color: var(--text-dark);
+      background: var(--white);
+      overflow-x: hidden;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    /* ── Topbar ── */
+    .topbar {
+      background: var(--navy);
+      color: #afc5db;
+      font-size: 13px;
+      letter-spacing: 0.02em;
+      padding: 0.45rem 2rem;
+      display: flex;
+      justify-content: flex-end;
+      gap: 2rem;
+    }
+    .topbar a { color: #afc5db; text-decoration: none; transition: color .2s; }
+    .topbar a:hover { color: var(--gold-light); }
+    .topbar span { display: flex; align-items: center; gap: 6px; }
+
+    /* ── Nav ── */
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: var(--white);
+      border-bottom: 1px solid #e4e0d8;
+      padding: 0 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 72px;
+    }
+    .nav-logo {
+      display: flex; align-items: center; gap: 14px;
+      text-decoration: none;
+    }
+    .logo-mark {
+      width: 44px; height: 44px;
+      background: var(--navy);
+      border-radius: 4px;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .logo-mark svg { width: 26px; height: 26px; }
+    .logo-text { display: flex; flex-direction: column; line-height: 1.1; }
+    .logo-text .brand { font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 700; color: var(--navy); letter-spacing: -0.01em; }
+    .logo-text .sub { font-size: 10.5px; font-weight: 500; color: var(--text-light); letter-spacing: 0.08em; text-transform: uppercase; }
+
+    .nav-links { display: flex; align-items: center; gap: 2rem; list-style: none; }
+    .nav-links a { font-size: 14.5px; font-weight: 500; color: var(--text-mid); text-decoration: none; transition: color .2s; }
+    .nav-links a:hover { color: var(--navy); }
+    .nav-cta {
+      background: var(--gold);
+      color: var(--white) !important;
+      padding: 10px 22px;
+      border-radius: 4px;
+      font-weight: 600 !important;
+      transition: background .2s !important;
+    }
+    .nav-cta:hover { background: var(--gold-light) !important; color: var(--white) !important; }
+
+    .hamburger { display: none; cursor: pointer; background: none; border: none; flex-direction: column; gap: 5px; }
+    .hamburger span { display: block; width: 24px; height: 2px; background: var(--navy); border-radius: 2px; transition: all .3s; }
+
+    /* ── Hero ── */
+    .hero {
+      background: var(--navy);
+      position: relative;
+      overflow: hidden;
+      min-height: 88vh;
+      display: flex;
+      align-items: center;
+    }
+    .hero-bg {
+      position: absolute; inset: 0;
+      background:
+        linear-gradient(135deg, rgba(13,35,64,0.97) 0%, rgba(22,50,85,0.90) 60%, rgba(30,74,122,0.75) 100%);
+    }
+    .hero-pattern {
+      position: absolute; inset: 0; opacity: 0.04;
+      background-image: repeating-linear-gradient(0deg, transparent, transparent 39px, #fff 39px, #fff 40px),
+                        repeating-linear-gradient(90deg, transparent, transparent 39px, #fff 39px, #fff 40px);
+    }
+    .hero-accent {
+      position: absolute;
+      right: -80px; top: 50%;
+      transform: translateY(-50%);
+      width: 700px; height: 700px;
+      border: 1px solid rgba(200,151,58,0.15);
+      border-radius: 50%;
+    }
+    .hero-accent::before {
+      content: '';
+      position: absolute; inset: 60px;
+      border: 1px solid rgba(200,151,58,0.1);
+      border-radius: 50%;
+    }
+    .hero-inner {
+      position: relative; z-index: 2;
+      max-width: 1200px; margin: 0 auto;
+      padding: 6rem 2rem;
+      width: 100%;
+    }
+    .hero-eyebrow {
+      display: inline-flex; align-items: center; gap: 10px;
+      font-size: 14px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1.6rem;
+    }
+    .hero-eyebrow::before {
+      content: ''; display: block;
+      width: 28px; height: 1.5px;
+      background: var(--gold);
+    }
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.8rem, 5.5vw, 5rem);
+      font-weight: 700;
+      color: var(--white);
+      line-height: 1.08;
+      letter-spacing: -0.02em;
+      max-width: 700px;
+      margin-bottom: 1.6rem;
+    }
+    .hero h1 em { color: var(--gold); font-style: normal; }
+    .hero p {
+      font-size: 1.15rem;
+      font-weight: 300;
+      color: #afc5db;
+      max-width: 520px;
+      line-height: 1.75;
+      margin-bottom: 2.8rem;
+    }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 1rem; }
+    .btn-primary {
+      background: var(--gold);
+      color: var(--white);
+      text-decoration: none;
+      padding: 15px 32px;
+      font-size: 15px; font-weight: 600;
+      border-radius: 4px;
+      border: 2px solid var(--gold);
+      transition: background .2s, border-color .2s;
+      display: inline-flex; align-items: center; gap: 8px;
+    }
+    .btn-primary:hover { background: var(--gold-light); border-color: var(--gold-light); }
+    .btn-outline {
+      background: transparent;
+      color: var(--white);
+      text-decoration: none;
+      padding: 15px 32px;
+      font-size: 15px; font-weight: 500;
+      border-radius: 4px;
+      border: 2px solid rgba(255,255,255,0.3);
+      transition: border-color .2s, background .2s;
+      display: inline-flex; align-items: center; gap: 8px;
+    }
+    .btn-outline:hover { border-color: rgba(255,255,255,0.7); background: rgba(255,255,255,0.06); }
+
+    .hero-stats {
+      display: flex; flex-wrap: wrap; gap: 2.5rem;
+      margin-top: 4.5rem;
+      padding-top: 3rem;
+      border-top: 1px solid rgba(255,255,255,0.1);
+    }
+    .hero-stat .num {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.6rem; font-weight: 700;
+      color: var(--white);
+      line-height: 1;
+    }
+    .hero-stat .num span { color: var(--gold); }
+    .hero-stat .label { font-size: 13px; color: #7a9ab8; margin-top: 6px; font-weight: 400; letter-spacing: 0.03em; }
+
+    /* ── Trust bar ── */
+    .trust-bar {
+      background: var(--cream);
+      border-bottom: 1px solid var(--cream-dark);
+      padding: 1.6rem 2rem;
+    }
+    .trust-bar-inner {
+      max-width: 1200px; margin: 0 auto;
+      display: flex; align-items: center; justify-content: space-between;
+      flex-wrap: wrap; gap: 1.2rem;
+    }
+    .trust-item {
+      display: flex; align-items: center; gap: 10px;
+      font-size: 13.5px; font-weight: 500; color: var(--text-mid);
+    }
+    .trust-item svg { flex-shrink: 0; }
+
+    /* ── Section scaffolding ── */
+    section { padding: var(--section-gap) 2rem; }
+    .section-inner { max-width: 1200px; margin: 0 auto; }
+    .section-label {
+      display: inline-flex; align-items: center; gap: 10px;
+      font-size: 14px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1rem;
+    }
+    .section-label::before { content: ''; display: block; width: 22px; height: 1.5px; background: var(--gold); }
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 3.5vw, 2.8rem);
+      font-weight: 700;
+      color: var(--navy);
+      line-height: 1.15;
+      letter-spacing: -0.015em;
+    }
+    .section-lead {
+      font-size: 1.05rem; font-weight: 300;
+      color: var(--text-mid);
+      line-height: 1.8;
+      max-width: 600px;
+      margin-top: 1rem;
+    }
+
+    /* ── Services ── */
+    #services { background: var(--white); }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5px;
+      background: var(--cream-dark);
+      border: 1.5px solid var(--cream-dark);
+      border-radius: 8px;
+      overflow: hidden;
+      margin-top: 3.5rem;
+    }
+    .service-card {
+      background: var(--white);
+      padding: 2.2rem;
+      position: relative;
+      transition: background .2s;
+      cursor: default;
+    }
+    .service-card:hover { background: #fafcff; }
+    .service-icon {
+      width: 48px; height: 48px;
+      background: #EEF3FA;
+      border-radius: 6px;
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 1.3rem;
+    }
+    .service-icon svg { width: 24px; height: 24px; color: var(--navy-light); }
+    .service-card h3 {
+      font-size: 17px; font-weight: 600;
+      color: var(--navy);
+      margin-bottom: 0.6rem;
+    }
+    .service-card p {
+      font-size: 14px; font-weight: 300;
+      color: var(--text-mid);
+      line-height: 1.75;
+      margin-bottom: 1.4rem;
+    }
+    .service-link {
+      font-size: 13px; font-weight: 600;
+      color: var(--gold);
+      text-decoration: none;
+      letter-spacing: 0.03em;
+      display: inline-flex; align-items: center; gap: 5px;
+      transition: gap .2s;
+    }
+    .service-link:hover { gap: 9px; }
+
+    /* ── About ── */
+    #about { background: var(--cream); }
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: center;
+      margin-top: 1rem;
+    }
+    .about-visual {
+      position: relative;
+    }
+    .about-card-main {
+      background: var(--navy);
+      border-radius: 8px;
+      padding: 2.8rem;
+      color: var(--white);
+    }
+    .about-card-main .quote {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.35rem;
+      font-weight: 400;
+      line-height: 1.55;
+      color: #cdddf0;
+      margin-bottom: 1.8rem;
+    }
+    .about-card-main .quote em { color: var(--gold-light); font-style: italic; }
+    .about-card-main .sig { font-size: 13px; font-weight: 600; color: var(--white); }
+    .about-card-main .sig-title { font-size: 12px; color: #7a9ab8; margin-top: 2px; font-weight: 300; }
+    .about-float {
+      position: absolute;
+      bottom: -28px; right: -28px;
+      background: var(--gold);
+      border-radius: 6px;
+      padding: 1.4rem 1.6rem;
+      color: var(--white);
+    }
+    .about-float .num {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem; font-weight: 700;
+      line-height: 1;
+    }
+    .about-float .lbl { font-size: 12px; font-weight: 500; opacity: 0.85; margin-top: 4px; }
+    .about-content { }
+    .about-content .section-lead { max-width: 100%; margin-bottom: 1.8rem; }
+    .about-points { list-style: none; display: flex; flex-direction: column; gap: 1rem; }
+    .about-points li {
+      display: flex; align-items: flex-start; gap: 12px;
+      font-size: 14.5px; font-weight: 400;
+      color: var(--text-mid); line-height: 1.7;
+    }
+    .about-check {
+      width: 20px; height: 20px; flex-shrink: 0;
+      margin-top: 2px;
+      background: #DFF0E7;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .about-check svg { width: 11px; height: 11px; color: #1D7E50; }
+    .about-btn { margin-top: 2.2rem; display: inline-flex; }
+
+    /* ── Carriers ── */
+    #carriers { background: var(--white); padding-top: 4rem; padding-bottom: 5rem; }
+    .carriers-header { text-align: center; margin-bottom: 2.8rem; }
+    .carriers-label {
+      font-size: 11.5px; font-weight: 700; letter-spacing: 0.14em;
+      text-transform: uppercase; color: var(--text-light);
+    }
+    .carriers-track-wrap { overflow: hidden; position: relative; }
+    .carriers-track-wrap::before,
+    .carriers-track-wrap::after {
+      content: ''; position: absolute; top: 0; bottom: 0; width: 80px; z-index: 2;
+    }
+    .carriers-track-wrap::before { left: 0; background: linear-gradient(to right, var(--white), transparent); }
+    .carriers-track-wrap::after { right: 0; background: linear-gradient(to left, var(--white), transparent); }
+    .carriers-track {
+      display: flex; gap: 3rem; align-items: center;
+      animation: scroll-carriers 24s linear infinite;
+      width: max-content;
+    }
+    .carriers-track:hover { animation-play-state: paused; }
+    @keyframes scroll-carriers {
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); }
+    }
+    .carrier-pill {
+      background: var(--cream);
+      border: 1px solid var(--cream-dark);
+      border-radius: 100px;
+      padding: 10px 24px;
+      font-size: 14px; font-weight: 600;
+      color: var(--text-mid);
+      white-space: nowrap;
+      letter-spacing: 0.01em;
+    }
+
+    /* ── Process ── */
+    #process { background: var(--navy); padding: var(--section-gap) 2rem; }
+    #process .section-title { color: var(--white); }
+    #process .section-lead { color: #8aacca; }
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 2px;
+      background: rgba(255,255,255,0.06);
+      border: 2px solid rgba(255,255,255,0.07);
+      border-radius: 8px;
+      overflow: hidden;
+      margin-top: 3.5rem;
+    }
+    .step {
+      background: var(--navy);
+      padding: 2.4rem 2rem;
+      position: relative;
+    }
+    .step:not(:last-child)::after {
+      content: '';
+      position: absolute; top: 0; right: 0; bottom: 0;
+      width: 2px;
+      background: rgba(255,255,255,0.06);
+    }
+    .step-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 3.5rem; font-weight: 700;
+      color: rgba(200,151,58,1);
+      line-height: 1;
+      margin-bottom: 1rem;
+      letter-spacing: -0.03em;
+    }
+    .step h3 { font-size: 16px; font-weight: 600; color: var(--white); margin-bottom: 0.7rem; }
+    .step p { font-size: 13.5px; font-weight: 300; color: #7a9ab8; line-height: 1.75; }
+
+    /* ── Quote form ── */
+    #quote { background: var(--cream); }
+    .quote-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.4fr;
+      gap: 4rem;
+      align-items: start;
+      margin-top: 1rem;
+    }
+    .quote-info {}
+    .quote-info .section-lead { max-width: 100%; }
+    .contact-list { list-style: none; margin-top: 2rem; display: flex; flex-direction: column; gap: 1.1rem; }
+    .contact-list li {
+      display: flex; align-items: center; gap: 12px;
+      font-size: 14.5px; font-weight: 400; color: var(--text-mid);
+    }
+    .contact-icon {
+      width: 38px; height: 38px; flex-shrink: 0;
+      background: var(--navy);
+      border-radius: 6px;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .contact-icon svg { width: 18px; height: 18px; color: var(--gold-light); }
+    .contact-list a { color: var(--navy); font-weight: 500; text-decoration: none; }
+    .contact-list a:hover { text-decoration: underline; }
+
+    .quote-form {
+      background: var(--white);
+      border: 1px solid var(--cream-dark);
+      border-radius: 10px;
+      padding: 2.6rem;
+    }
+    .form-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem; font-weight: 700;
+      color: var(--navy); margin-bottom: 1.6rem;
+    }
+    .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .form-grid .full { grid-column: 1 / -1; }
+    label {
+      display: block;
+      font-size: 12.5px; font-weight: 600;
+      letter-spacing: 0.04em; text-transform: uppercase;
+      color: var(--text-mid);
+      margin-bottom: 6px;
+    }
+    input, select, textarea {
+      width: 100%;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 14.5px;
+      font-weight: 400;
+      color: var(--text-dark);
+      background: var(--cream);
+      border: 1px solid var(--cream-dark);
+      border-radius: 5px;
+      padding: 11px 14px;
+      transition: border-color .2s, background .2s;
+      outline: none;
+      appearance: none;
+    }
+    input:focus, select:focus, textarea:focus {
+      border-color: var(--navy-light);
+      background: var(--white);
+    }
+    textarea { resize: vertical; min-height: 110px; }
+    .btn-submit {
+      width: 100%; margin-top: 0.5rem;
+      background: var(--navy);
+      color: var(--white);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 15px; font-weight: 600;
+      border: none; cursor: pointer;
+      padding: 14px;
+      border-radius: 5px;
+      letter-spacing: 0.02em;
+      transition: background .2s;
+    }
+    .btn-submit:hover { background: var(--navy-light); }
+    .form-note { font-size: 12px; color: var(--text-light); margin-top: 0.8rem; text-align: center; }
+
+    /* ── Testimonials ── */
+    #testimonials { background: var(--white); }
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+      margin-top: 3rem;
+    }
+    .testimonial {
+      background: var(--cream);
+      border: 1px solid var(--cream-dark);
+      border-radius: 8px;
+      padding: 2rem;
+    }
+    .testimonial-stars { display: flex; gap: 3px; margin-bottom: 1.1rem; }
+    .star { color: var(--gold); font-size: 15px; }
+    .testimonial blockquote {
+      font-size: 14.5px; font-weight: 300;
+      color: var(--text-mid);
+      line-height: 1.8;
+      font-style: italic;
+      margin-bottom: 1.3rem;
+    }
+    .testimonial-author { font-size: 13px; font-weight: 600; color: var(--navy); }
+    .testimonial-loc { font-size: 12px; color: var(--text-light); margin-top: 2px; }
+
+    /* ── Footer ── */
+    footer {
+      background: var(--navy);
+      color: #8aacca;
+      padding: 4rem 2rem 2rem;
+    }
+    .footer-inner {
+      max-width: 1200px; margin: 0 auto;
+    }
+    .footer-top {
+      display: grid;
+      grid-template-columns: 1.8fr 1fr 1fr 1fr;
+      gap: 3rem;
+      padding-bottom: 3rem;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .footer-brand .logo-text .brand { color: var(--white); }
+    .footer-brand .logo-text .sub { color: #7a9ab8; }
+    .footer-brand p {
+      font-size: 13.5px; font-weight: 300;
+      color: #7a9ab8; line-height: 1.75;
+      margin-top: 1.2rem;
+    }
+    .footer-col h4 {
+      font-size: 11.5px; font-weight: 700;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      color: var(--white);
+      margin-bottom: 1.1rem;
+    }
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 0.65rem; }
+    .footer-col a { font-size: 13.5px; color: #7a9ab8; text-decoration: none; transition: color .2s; }
+    .footer-col a:hover { color: var(--gold-light); }
+    .footer-bottom {
+      display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between;
+      gap: 1rem; padding-top: 2rem;
+    }
+    .footer-bottom p { font-size: 12.5px; color: #4f6e8a; }
+    .footer-bottom a { color: #4f6e8a; text-decoration: none; }
+    .footer-bottom a:hover { color: #7a9ab8; }
+
+    /* ── Newsletter ── */
+    .newsletter-box {
+      background: var(--navy);
+      border-radius: 10px;
+      padding: 3rem 3.5rem;
+    }
+    .newsletter-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2.5rem;
+    }
+    .newsletter-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.3rem, 2.2vw, 1.7rem);
+      font-weight: 700;
+      color: var(--white);
+      line-height: 1.15;
+      letter-spacing: -0.015em;
+      margin-bottom: 0.6rem;
+    }
+    .newsletter-desc {
+      font-size: 0.95rem;
+      font-weight: 300;
+      color: #afc5db;
+      line-height: 1.7;
+      margin-bottom: 1.3rem;
+    }
+    .newsletter-link { display: block; text-decoration: none; }
+    .newsletter-img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 6px;
+      display: block;
+      margin-bottom: 0.9rem;
+      transition: opacity .2s;
+    }
+    .newsletter-link:hover .newsletter-img { opacity: 0.85; }
+    .newsletter-link-text {
+      display: block;
+      color: var(--white);
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 1.5;
+      transition: color .2s;
+    }
+    .newsletter-link:hover .newsletter-link-text { color: var(--gold-light); }
+
+    @media (max-width: 900px) {
+      .newsletter-box { padding: 2.4rem 2rem; }
+    }
+    @media (max-width: 700px) {
+      .newsletter-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .newsletter-img { height: 190px; }
+    }
+    @media (max-width: 480px) {
+      .newsletter-box { padding: 2rem 1.4rem; }
+    }
+
+    /* ── Mobile nav ── */
+    @media (max-width: 900px) {
+      .nav-links { display: none; flex-direction: column; gap: 0; position: absolute; top: 72px; left: 0; right: 0; background: var(--white); border-bottom: 1px solid #e4e0d8; padding: 1rem 0; }
+      .nav-links.open { display: flex; }
+      .nav-links li { width: 100%; }
+      .nav-links a { display: block; padding: 12px 2rem; }
+      .nav-cta { margin: 8px 2rem; text-align: center; border-radius: 4px; }
+      .hamburger { display: flex; }
+      nav { position: relative; }
+      .about-grid { grid-template-columns: 1fr; }
+      .about-float { position: static; margin-top: 1.5rem; display: inline-block; }
+      .quote-grid { grid-template-columns: 1fr; }
+      .footer-top { grid-template-columns: 1fr 1fr; }
+      .steps { grid-template-columns: 1fr; }
+      .step::after { display: none !important; }
+      .form-grid { grid-template-columns: 1fr; }
+      .form-grid .full { grid-column: 1; }
+    }
+    @media (max-width: 560px) {
+      .footer-top { grid-template-columns: 1fr; }
+      .hero h1 { font-size: 2.4rem; }
+      .hero-stats { gap: 1.5rem; }
+      .about-grid { gap: 2.5rem; }
+    }
+
+    /* ── Mobile: logos, grids, topbar, spacing ── */
+    .services-grid-3col {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5px;
+      background: var(--cream-dark);
+      border: 1.5px solid var(--cream-dark);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    nav img { max-width: 425px; width: 100%; height: auto; }
+    .footer-brand img { max-width: 325px; width: 100%; height: auto; }
+
+    @media (max-width: 900px) {
+      .services-grid-3col { grid-template-columns: repeat(2, 1fr); }
+      .testimonials-grid { grid-template-columns: 1fr; }
+      :root { --section-gap: 4rem; }
+      section { padding: var(--section-gap) 1.25rem; }
+      .hero-inner { padding: 4rem 1.25rem; }
+      .quote-form { padding: 1.8rem; }
+    }
+    @media (max-width: 640px) {
+      .topbar {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 0.6rem 1.5rem;
+        padding: 0.5rem 1rem;
+        font-size: 12px;
+        text-align: center;
+      }
+      nav { padding: 0 1.25rem; }
+      nav img { max-width: 300px; }
+      .footer-brand img { max-width: 300px; }
+      .trust-bar { padding: 1.2rem 1.25rem; }
+      .trust-item { font-size: 12.5px; }
+    }
+    @media (max-width: 480px) {
+      .services-grid-3col { grid-template-columns: 1fr; }
+      .services-grid { grid-template-columns: 1fr; }
+      .hero h1 { font-size: 2rem; }
+      .hero p { font-size: 1rem; }
+      .btn-primary, .btn-outline { width: 100%; justify-content: center; }
+    }
+
+    /* ── Animate on scroll ── */
+    .reveal { opacity: 0; transform: translateY(28px); transition: opacity .65s ease, transform .65s ease; }
+    .reveal.visible { opacity: 1; transform: none; }
+    .reveal-delay-1 { transition-delay: .1s; }
+    .reveal-delay-2 { transition-delay: .2s; }
+    .reveal-delay-3 { transition-delay: .3s; }
+    .reveal-delay-4 { transition-delay: .4s; }
+  
+    .service-img-wrap {
+    width: calc(100% + 4.4rem);
+    margin: -2.2rem -2.2rem 1.6rem -2.2rem;
+    height: 180px;
+    overflow: hidden;
+    background: var(--cream-dark);
+  }
+
+  .service-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    transition: transform .4s ease;
+  }
+
+  .service-card:hover .service-img {
+    transform: scale(1.04);
+  }
+
+  .app-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    display: none;
+  }
+
+  .app-modal.is-open {
+    display: block;
+  }
+
+  .app-modal-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(20, 20, 20, 0.6);
+    backdrop-filter: blur(2px);
+    opacity: 0;
+    transition: opacity 0.25s ease;
+  }
+
+  .app-modal.is-open .app-modal-overlay {
+    opacity: 1;
+  }
+
+  .app-modal-panel {
+    position: relative;
+    max-width: 800px;
+    width: min(92vw, 800px);
+    max-height: 88vh;
+    margin: 5vh auto;
+    background: #fff;
+    border-radius: 10px;
+    border: 1.5px solid var(--cream-dark, #ddd7c6);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    transform: translateY(16px) scale(0.98);
+    opacity: 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+  }
+
+  .app-modal.is-open .app-modal-panel {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+
+  .app-modal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.1rem 1.4rem;
+    border-bottom: 1px solid var(--cream-dark, #ddd7c6);
+    background: #fff;
+  }
+
+  .app-modal-header h3 {
+    margin: 0;
+    font-size: 1.05rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+  }
+
+  .app-modal-close {
+    background: none;
+    border: none;
+    font-size: 1.6rem;
+    line-height: 1;
+    cursor: pointer;
+    color: #555;
+    padding: 0.2rem 0.5rem;
+    border-radius: 6px;
+    transition: background 0.15s ease, color 0.15s ease;
+  }
+
+  .app-modal-close:hover {
+    background: var(--cream-dark, #f0ece0);
+    color: #111;
+  }
+
+  .app-modal-body {
+    flex: 1;
+    overflow-y: auto;
+    padding: 0.5rem 0 0;
+  }
+
+  /* Jotform's injected iframe should fill the panel width */
+  .app-modal-body iframe {
+    width: 100% !important;
+    border: none;
+  }
+
+  body.app-modal-locked {
+    overflow: hidden;
+  }
+  </style>
+</head>
+<body>
+
+  <!-- Topbar -->
+  <div class="topbar">
+    <span>
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+      <a href="mailto:info@sebastianwilliamson.com ?subject=Request%20a%20Consultation">info@sebastianwilliamson.com</a>
+    </span>
+    <span>
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.91a16 16 0 006.08 6.08l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+      <a href="tel:6158619153">615-861-9153</a>
+    </span>
+  </div>
+
+  <!-- Nav -->
+  <nav>
+    <img src="SWIS Logo - 2023-01(1500-268px).png" width="425"></a>
+
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#process">How It Works</a></li>
+      <li><a href="#testimonials">Reviews</a></li>
+      <li><a href="#quote" class="nav-cta">Contact Us</a></li>
+    </ul>
+
+    <button class="hamburger" id="hamburger" aria-label="Toggle navigation">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-pattern"></div>
+    <div class="hero-accent"></div>
+    <div class="hero-inner">
+      <div class="hero-eyebrow">Independent Insurance Broker · Tennessee</div>
+      <h1>Insurance Coverage That's<br/>Built Around <em>You</em></h1>
+      <p>Sebastian Williamson Insurance Solutions works with dozens of top-rated carriers so you get the right protection at the right price — with a local advisor who answers the phone.</p>
+      <div class="hero-actions">
+        <a href="#quote" class="btn-primary">
+          Request a Consultation
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+        <a href="#services" class="btn-outline">Explore Coverage Options
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+      </div>
+      <!-- <div class="hero-stats">
+        <div class="hero-stat">
+          <div class="num">25<span>+</span></div>
+          <div class="label">Top-Rated Carriers</div>
+        </div>
+        <div class="hero-stat">
+          <div class="num">15<span>+</span></div>
+          <div class="label">Years of Experience</div>
+        </div>
+        <div class="hero-stat">
+          <div class="num">1<span>k</span>+</div>
+          <div class="label">Tennessee Families Covered</div>
+        </div>
+        <div class="hero-stat">
+          <div class="num">5<span>★</span></div>
+          <div class="label">Average Client Rating</div>
+        </div>
+      </div> -->
+    </div>
+  </section>
+
+  <!-- Trust bar -->
+  <div class="trust-bar">
+    <div class="trust-bar-inner">
+      <div class="trust-item">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1D7E50" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        Licensed in Tennessee, Oregon, and Washington
+      </div>
+      <div class="trust-item">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1D7E50" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        A-rated carriers only
+      </div>
+      <div class="trust-item">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1D7E50" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012 0h3a2 2 0 012 1.72"/></svg>
+        Local advisor, real answers
+      </div>
+      <div class="trust-item">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1D7E50" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        Fast, no-pressure proposals
+      </div>
+    </div>
+  </div>
+
+  <!-- Services (Commercial) -->
+
+  <!-- Services -->
+  <section id="services">
+    <div class="section-inner">
+      <span class="section-label reveal">What We Cover</span>
+      <h2 class="section-title reveal reveal-delay-1">Specialized coverage for<br/><em style="font-style:italic; color: var(--gold);">your</em> unique risk profile</h2>
+      <p class="section-lead reveal reveal-delay-2">From main street storefronts to complex commercial operations, we match you with the right carrier — not just the nearest policy.</p>
+
+      <!-- Commercial (primary) -->
+      <div style="margin-top: 3.5rem;">
+        <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 1.2rem;">
+          <span style="font-size: 16px; font-weight: 700; letter-spacing: 0.13em; text-transform: uppercase; color: var(--gold);">Commercial Risk Management</span>
+          <div style="flex: 1; height: 1px; background: var(--cream-dark);"></div>
+        </div>
+
+        <div class="services-grid-3col">
+
+          <div class="service-card reveal">
+            <div class="service-img-wrap">
+              <img src="images/store shop (png).png" alt="Main Street Small Business" class="service-img" />
+            </div>
+            <h3>Main Street Small Business</h3>
+            <p>BOP, general liability, commercial property, and business interruption for retail shops, offices, and service businesses.</p>
+            <a href="#businessApp" target="_blank" rel="noreferrer noopener" class="service-link">Get started →</a>
+          </div>
+
+          <div class="service-card reveal reveal-delay-1">
+            <div class="service-img-wrap">
+              <img src="images/multifamily hoa (png).png" alt="Multifamily Living & HOA" class="service-img" />
+            </div>
+            <h3>Multifamily Living &amp; HOA</h3>
+            <p>Master policies for apartment communities, condominiums, and homeowner associations — including D&amp;O for board members.</p>
+            <a href="#businessApp" target="_blank" rel="noreferrer noopener" class="service-link">Get started →</a>
+          </div>
+
+          <div class="service-card reveal reveal-delay-2">
+            <div class="service-img-wrap">
+              <img src="images/professional management (png).png" alt="Professional & Management Liability" class="service-img" />
+            </div>
+            <h3>Professional &amp; Management Liability</h3>
+            <p>E&amp;O, D&amp;O, EPLI, and FLI for consulting firms, executives, professionals, and organizations with complex risk exposure.</p>
+            <a href="#businessApp" target="_blank" rel="noreferrer noopener" class="service-link">Get started →</a>
+          </div>
+
+          <div class="service-card reveal">
+            <div class="service-img-wrap">
+              <img src="images/construction man (png).png" alt="Trade Contractors & Construction" class="service-img" />
+            </div>
+            <h3>Trade Contractors &amp; Construction</h3>
+            <p>General liability, inland marine, builders risk, and workers' comp for contractors, subcontractors, and project owners.</p>
+            <a href="#businessApp" target="_blank" rel="noreferrer noopener" class="service-link">Get started →</a>
+          </div>
+
+          <div class="service-card reveal reveal-delay-1">
+            <div class="service-img-wrap">
+              <img src="images/trucking (png).png" alt="Freight Transportation" class="service-img" />
+            </div>
+            <h3>Freight Transportation</h3>
+            <p>Trucking liability, motor cargo, physical damage, and owner-operator coverage for fleets of any size on any route.</p>
+            <a href="#businessApp" target="_blank" rel="noreferrer noopener" class="service-link">Get started →</a>
+          </div>
+
+          <div class="service-card reveal">
+            <div class="service-img-wrap">
+              <img src="images/warehouse (png).png" alt="Warehouse & Distribution" class="service-img" />
+            </div>
+            <h3>Warehouse &amp; Distribution</h3>
+            <p>Bailee, inland marine, commercial property, and product liability for storage, fulfillment, and logistics operations.</p>
+            <a href="#businessApp" target="_blank" rel="noreferrer noopener" class="service-link">Get started →</a>
+          </div>
+
+          <div class="service-card reveal reveal-delay-2">
+            <div class="service-img-wrap">
+              <img src="images/restaurant chef (png).png" alt="Restaurant & Hospitality" class="service-img" />
+            </div>
+            <h3>Restaurant &amp; Hospitality</h3>
+            <p>Liquor liability, food spoilage, equipment breakdown, and workers' comp tailored for restaurants, bars, and hotels.</p>
+            <a href="#businessApp" target="_blank" rel="noreferrer noopener" class="service-link">Get started →</a>
+          </div>
+
+          <div class="service-card reveal reveal-delay-1">
+            <div class="service-img-wrap">
+              <img src="images/nurse (png).png" alt="Assisted Living & Nursing Care" class="service-img" />
+            </div>
+            <h3>Assisted Living &amp; Nursing Care</h3>
+            <p>Professional, general, and abuse liability for senior care facilities, memory care communities, and in-home care providers.</p>
+            <a href="#businessApp" target="_blank" rel="noreferrer noopener" class="service-link">Get started →</a>
+          </div>
+
+          <div class="service-card reveal reveal-delay-2">
+            <div class="service-img-wrap">
+              <img src="images/doctors (png).png" alt="Healthcare & Medical Specialists" class="service-img" />
+            </div>
+            <h3>Healthcare &amp; Medical Specialists</h3>
+            <p>Medical malpractice, clinic liability, and cyber for physicians, dentists, therapists, and allied health practices.</p>
+            <a href="#businessApp" target="_blank" rel="noreferrer noopener" class="service-link">Get started →</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- ============================================================ -->
+      <!-- 1) MODAL MARKUP — paste this once, anywhere in your <body>   -->
+      <!--    (e.g. right after the commercial services grid, or        -->
+      <!--    just before your closing </body> tag)                     -->
+      <!-- ============================================================ -->
+
+      <div id="businessAppModal" class="app-modal" aria-hidden="true">
+        <div class="app-modal-overlay" data-close-modal></div>
+        <div class="app-modal-panel" role="dialog" aria-modal="true" aria-labelledby="appModalTitle">
+          <div class="app-modal-header">
+            <h3 id="appModalTitle">Commercial Insurance Application</h3>
+            <button type="button" class="app-modal-close" data-close-modal aria-label="Close">&times;</button>
+          </div>
+          <div class="app-modal-body" id="appModalBody">
+            <!-- Jotform script gets injected here on first open -->
+          </div>
+        </div>
+      </div>
+
+      <br>
+      <hr style="border: none; height: 1px; background-color: #e0e0e0; margin: 20px 0;">
+
+      <!-- Personal (primary) -->
+      <div style="margin-top: 3.5rem;">
+        <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 1.2rem;">
+          <span style="font-size: 16px; font-weight: 700; letter-spacing: 0.13em; text-transform: uppercase; color: var(--blue);">Personal Risk Management</span>
+          <div style="flex: 1; height: 1px; background: var(--cream-dark);"></div>
+        </div>
+
+        <div class="services-grid-3col">
+
+          <div class="service-card reveal">
+            <div class="service-img-wrap">
+              <img src="images/home family (png).png" alt="Personal Protection for Your Family" class="service-img" />
+            </div>
+            <h3>Personal Protection for Your Family</h3>
+            <p>Home, Auto, Jewelry, Valuable Artwork & Collectibles, and a Personal Excess Liability Umbrella — bundled and optimized across top-rated carriers for your household.</p>
+            <a href="#personalApp" target="_blank" rel="noreferrer noopener" class="service-link">Get started →</a>
+          </div>
+
+          <div class="service-card reveal">
+            <div class="service-img-wrap">
+              <img src="images/mask (png).png" alt="Personal Protection for Your Family" class="service-img" />
+            </div>
+            <h3>Identity Theft & Cyber Risk</h3>
+            <p>Personal cyber coverage for fraud reimbursement, identity restoration, cyber extortion, and online reputation protection.</p>
+            <a href="#personalApp" target="_blank" rel="noreferrer noopener" class="service-link">Get started →</a>
+          </div>
+
+          <div class="service-card reveal">
+            <div class="service-img-wrap">
+              <img src="images/family in orchard (png).png" alt="Personal Protection for Your Family" class="service-img" />
+            </div>
+            <h3>Life Insurance & Disability Income</h3>
+            <p>Life insurance paired with short- and long-term disability coverage — protecting your family if you're gone and your income if you can’t work.</p>
+            <a href="#personalApp" target="_blank" rel="noreferrer noopener" class="service-link">Get started →</a>
+          </div>
+
+          <div class="service-card reveal">
+            <div class="service-img-wrap">
+              <img src="images/classic porsche (png).png" alt="Personal Protection for Your Family" class="service-img" />
+            </div>
+            <h3>Classic & Specialty Auto</h3>
+            <p>Agreed-value coverage for classic cars, collector vehicles, exotic autos, and motorcycles — with no depreciation at claim time.</p>
+            <a href="#personalApp" target="_blank" rel="noreferrer noopener" class="service-link">Get started →</a>
+          </div>
+
+          <div class="service-card reveal">
+            <div class="service-img-wrap">
+              <img src="images/boating (png).png" alt="Personal Protection for Your Family" class="service-img" />
+            </div>
+            <h3>Boat, Yacht & Watercraft</h3>
+            <p>Hull, liability, and uninsured watercraft coverage for fishing boats, pontoons, sailboats, and yachts — on Tennessee's lakes and beyond.</p>
+            <a href="#personalApp" target="_blank" rel="noreferrer noopener" class="service-link">Get started →</a>
+          </div>
+
+          <div class="service-card reveal">
+            <div class="service-img-wrap">
+              <img src="images/airplane (png).png" alt="Personal Protection for Your Family" class="service-img" />
+            </div>
+            <h3>Aviation</h3>
+            <p>Hull, liability, and hangar coverage for private pilots, charter operators, flight schools, and fixed-base operators.</p>
+            <a href="#personalApp" target="_blank" rel="noreferrer noopener" class="service-link">Get started →</a>
+          </div>
+
+          <div class="service-card reveal">
+            <div class="service-img-wrap">
+              <img src="images/vacation home (png).png" alt="Personal Protection for Your Family" class="service-img" />
+            </div>
+            <h3>Vacation & Investment Properties</h3>
+            <p>Coverage for cabins, condos, and beach properties — including loss of rental income and liability protection when guests arrive.</p>
+            <a href="#personalApp" target="_blank" rel="noreferrer noopener" class="service-link">Get started →</a>
+          </div>
+
+          <div class="service-card reveal">
+            <div class="service-img-wrap">
+              <img src="images/domestic staff (png).png" alt="Personal Protection for Your Family" class="service-img" />
+            </div>
+            <h3>EPLI & Work Comp for Domestic Staff</h3>
+            <p>Households that employ staff like nannies, housekeepers, or chefs, take on employment liability—exposures typically excluded from personal umbrella policies.</p>
+            <a href="#personalApp" target="_blank" rel="noreferrer noopener" class="service-link">Get started →</a>
+          </div>
+
+          <div class="service-card reveal">
+            <div class="service-img-wrap">
+              <img src="images/family (png).png" alt="Personal Protection for Your Family" class="service-img" />
+            </div>
+            <h3>Global Travel and K&R Protection</h3>
+            <p>For families with a global footprint — coverage that goes where ever your passport does, including access to crisis response professionals when the stakes are highest.</p>
+            <a href="#personalApp" target="_blank" rel="noreferrer noopener" class="service-link">Get started →</a>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ============================================================ -->
+      <!-- 1) MODAL MARKUP — paste this once, anywhere in your <body>   -->
+      <!--    (alongside the businessAppModal markup from before)       -->
+      <!-- ============================================================ -->
+
+      <div id="personalAppModal" class="app-modal" aria-hidden="true">
+        <div class="app-modal-overlay" data-close-modal></div>
+        <div class="app-modal-panel" role="dialog" aria-modal="true" aria-labelledby="personalAppModalTitle">
+          <div class="app-modal-header">
+            <h3 id="personalAppModalTitle">Personal Insurance Application</h3>
+            <button type="button" class="app-modal-close" data-close-modal aria-label="Close">&times;</button>
+          </div>
+          <div class="app-modal-body" id="personalAppModalBody">
+            <!-- Jotform script gets injected here on first open -->
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about">
+    <div class="section-inner">
+      <div class="about-grid">
+        <div class="about-visual reveal">
+          <div class="about-card-main">
+            <p class="quote">"My job isn't just to sell you a policy — my job is to make sure you have the coverage you'll need when it matters most."</p>
+            <div class="sig" style="font-size: 16px;">Caleb Allen</div>
+            <div class="sig-title">Founder &amp; Agency Principal, SWIS</div>
+          </div>
+          <div class="about-float">
+            <div class="num">24+</div>
+            <div class="lbl">Carrier Partners</div>
+          </div>
+        </div>
+        <div class="about-content">
+          <span class="section-label reveal">About SWIS</span>
+          <h2 class="section-title reveal reveal-delay-1">Independent means we work for <em style="font-style:italic; color: var(--gold);">you</em></h2>
+          <p class="section-lead reveal reveal-delay-2">Sebastian Williamson Insurance Solutions is an independent agency. We're not captive to any single carrier — which means every recommendation we make is driven purely by what's best for you.</p>
+          <ul class="about-points reveal reveal-delay-3">
+            <li>
+              <span class="about-check">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              </span>
+              Access to dozens of highly-rated carriers means genuine market competition on your behalf
+            </li>
+            <li>
+              <span class="about-check">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              </span>
+              A single advisor who knows your risk profile
+            </li>
+            <li>
+              <span class="about-check">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              </span>
+              Claim advocacy — we're in your corner when you file, not just when you buy
+            </li>
+            <li>
+              <span class="about-check">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              </span>
+              Annual policy reviews to keep coverage current as your risk profile changes
+            </li>
+          </ul>
+          <!-- <a href="#quote" class="btn-primary about-btn reveal reveal-delay-4">Contact Us</a> -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Process -->
+  <section id="process">
+    <div class="section-inner">
+      <span class="section-label reveal">How It Works</span>
+      <h2 class="section-title reveal reveal-delay-1">From first call to<br/>covered — simply</h2>
+      <p class="section-lead reveal reveal-delay-2">Getting the right insurance shouldn't feel like a chore. Our process is straightforward and built around your schedule.</p>
+      <div class="steps">
+        <div class="step reveal">
+          <div class="step-num">01</div>
+          <h3>Tell Us About Yourself</h3>
+          <p>Fill out our insurance request form or give us a call. We gather the important info to do the work right.</p>
+        </div>
+        <div class="step reveal reveal-delay-1">
+          <div class="step-num">02</div>
+          <h3>We Shop the Market</h3>
+          <p>We compare your risk profile across dozens of carriers and identify the best coverage and value.</p>
+        </div>
+        <div class="step reveal reveal-delay-2">
+          <div class="step-num">03</div>
+          <h3>Review Your Options</h3>
+          <p>We walk you through our recommendations in plain English — no jargon, no pressure.</p>
+        </div>
+        <div class="step reveal reveal-delay-3">
+          <div class="step-num">04</div>
+          <h3>Get Covered &amp; Stay Covered</h3>
+          <p>Bind your policy and enjoy ongoing support, annual reviews, and claim advocacy whenever you need us.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section id="testimonials">
+    <div class="section-inner">
+      <span class="section-label reveal">Client Reviews</span>
+      <h2 class="section-title reveal reveal-delay-1">What Tennessee clients<br/>are saying</h2>
+
+      <div class="testimonials-grid">
+        <div class="testimonial reveal">
+          <div class="testimonial-stars">
+            <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+          </div>
+          <blockquote>"SWIS saved our family over $800 a year just by shopping our home and auto policies together. They explained every option clearly and never pushed us toward anything we didn't need."</blockquote>
+          <div class="testimonial-author">Michael T.</div>
+          <div class="testimonial-loc">Brentwood, TN</div>
+        </div>
+        <div class="testimonial reveal reveal-delay-1">
+          <div class="testimonial-stars">
+            <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+          </div>
+          <blockquote>"When SWIS reviewed our policies, they uncovered several critical coverage gaps we didn’t even realize existed and helped us fix them before they became costly problems."</blockquote>
+          <div class="testimonial-author">Jennifer R.</div>
+          <div class="testimonial-loc">Franklin, TN</div>
+        </div>
+        <div class="testimonial reveal reveal-delay-2">
+          <div class="testimonial-stars">
+            <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+          </div>
+          <blockquote>"I came to SWIS for commercial coverage for my small business. They found a BOP policy that covered things I didn't even know I needed to worry about. Worth every penny."</blockquote>
+          <div class="testimonial-author">David M.</div>
+          <div class="testimonial-loc">Murfreesboro, TN</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LinkedIn Newsletter -->
+  <section id="newsletter" style="background: var(--cream); padding: var(--section-gap) 2rem;">
+    <div class="section-inner">
+      <div class="newsletter-box">
+
+        <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 1.8rem;">
+          <!-- LinkedIn icon -->
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="24" height="24" rx="4" fill="#0b66c3"/>
+            <path d="M7 10H5v9h2v-9zm-1-3a1.25 1.25 0 110 2.5A1.25 1.25 0 016 7zm4 3H8v9h2v-4.5c0-2 2.5-2.2 2.5 0V19h2v-5.5C14.5 10 12 9.8 10 11.5V10z" fill="white"/>
+          </svg>
+          <span style="font-size: 14px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold);">LinkedIn Newsletter</span>
+        </div>
+
+        <div class="newsletter-grid">
+          <div class="newsletter-article">
+            <h2 class="newsletter-title">SWIS Risk Report</h2>
+            <p class="newsletter-desc">Practical insurance insights, market updates, and risk management tips</p>
+            <a href="https://www.linkedin.com/pulse/mastering-risk-management-key-safeguarding-a1bbe" target="_blank" rel="noopener noreferrer" class="newsletter-link">
+              <img src="images/office board room (png).png" alt="Mastering Risk Management" class="newsletter-img" />
+              <span class="newsletter-link-text">Mastering Risk Management: <br>The Key to Safeguarding Your Business</span>
+            </a>
+          </div>
+
+          <div class="newsletter-article">
+            <h2 class="newsletter-title">Insure to Ensure</h2>
+            <p class="newsletter-desc">Why personal insurance is more important than you think</p>
+            <a href="https://www.linkedin.com/pulse/safeguarding-your-home-finances-homeowners-nzi2e" target="_blank" rel="noopener noreferrer" class="newsletter-link">
+              <img src="images/home car (png).png" alt="Safeguarding Your Home and Finances" class="newsletter-img" />
+              <span class="newsletter-link-text">Safeguarding Your Home and Finances: <br>A Homeowner’s Guide to Risk Management</span>
+            </a>
+          </div>
+        </div>
+
+        <div style="margin-top: 2.4rem; text-align: center;">
+          <a href="https://www.linkedin.com/build-relation/newsletter-follow?entityUrn=7311106421352218624"
+             target="_blank" rel="noopener noreferrer"
+             style="display: inline-flex; align-items: center; gap: 10px; background: var(--gold); color: var(--white); text-decoration: none; padding: 15px 28px; font-size: 15px; font-weight: 600; border-radius: 4px; border: 2px solid var(--gold); transition: background .2s, border-color .2s;"
+             onmouseover="this.style.background='var(--gold-light)'; this.style.borderColor='var(--gold-light)'"
+             onmouseout="this.style.background='var(--gold)'; this.style.borderColor='var(--gold)'">
+            Read &amp; Subscribe
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
+            </svg>
+          </a>
+          <p style="font-size: 12px; color: #4f6e8a; margin-top: 10px;">Opens on LinkedIn</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Quote -->
+  <section id="quote">
+    <div class="section-inner">
+      <div class="quote-grid">
+        <div class="quote-info">
+          <span class="section-label reveal">Get in Touch</span>
+          <h2 class="section-title reveal reveal-delay-1">Request your<br/>consultation today</h2>
+          <p class="section-lead reveal reveal-delay-2">There's no obligation and no pressure — just a straightforward conversation about how we can protect what matters most to you.</p>
+          <ul class="contact-list reveal reveal-delay-3">
+            <li>
+              <span class="contact-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012 0h3a2 2 0 012 1.72"/></svg>
+              </span>
+              <a href="tel:6158619153">615-861-9153</a>
+            </li>
+            <li>
+              <span class="contact-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              </span>
+              <a href="mailto:info@sebastianwilliamson.com ?subject=Request%20a%20Consultation">info@sebastianwilliamson.com</a>
+            </li>
+            <li>
+              <span class="contact-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              </span>
+              <a href="https://downtownfranklintn.com/" target="_blank" rel="noopener noreferrer">Franklin, TN</a>— serving Tennessee, and more
+            </li>
+          </ul>
+        </div>
+
+        <div class="quote-form reveal reveal-delay-2">
+          <script type="text/javascript" src="https://form.jotform.com/jsform/262038244760051"></script>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="nav-logo">
+            <!-- <div class="logo-mark">
+              <svg viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M13 2L3 8V18L13 24L23 18V8L13 2Z" stroke="#C8973A" stroke-width="1.5" fill="none"/>
+                <path d="M13 7L8 10V16L13 19L18 16V10L13 7Z" fill="#C8973A" opacity="0.3"/>
+                <circle cx="13" cy="13" r="2.5" fill="#C8973A"/>
+              </svg>
+            </div> -->
+            <img src="SWIS Logo - 2023-01(1500-268px).png" width="325">
+            <!-- <div class="logo-text footer-brand">
+              <span class="brand">SW Insurance</span>
+              <span class="sub">Solutions · Franklin, TN</span>
+            </div> -->
+          </div>
+          <p>An independent insurance agency proudly serving the Volunteer State. We shop. You save. You're covered.</p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="#quote">Auto Insurance</a></li>
+            <li><a href="#quote">Home Insurance</a></li>
+            <li><a href="#quote">Renters Insurance</a></li>
+            <li><a href="#quote">Life Insurance</a></li>
+            <li><a href="#quote">Personal Umbrella</a></li>
+            <li><a href="#quote">Commercial</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#process">How It Works</a></li>
+            <li><a href="#testimonials">Reviews</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="tel:6158619153">615-861-9153</a></li>
+            <li><a href="mailto:info@sebastianwilliamson.com">info@sebastianwilliamson.com</a></li>
+            <li><a href="#quote">Request a Consultation</a></li>
+            <li><a href="https://www.linkedin.com/company/sebastian-williamson-insurance-solutions-llc/about/" target="_blank" rel="noopener">LinkedIn</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2026 Sebastian Williamson Insurance Solutions, LLC. All rights reserved.</p>
+        <p>
+          <a href="#personalApp">Privacy Policy</a> &nbsp;·&nbsp;
+          <a href="#personalApp">Terms of Use</a> &nbsp;·&nbsp;
+          Franklin, TN 37067
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile nav
+    const hamburger = document.getElementById('hamburger');
+    const navLinks  = document.getElementById('navLinks');
+    hamburger.addEventListener('click', () => {
+      navLinks.classList.toggle('open');
+    });
+    navLinks.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => navLinks.classList.remove('open'));
+    });
+
+    // Scroll reveal
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          observer.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    reveals.forEach(el => observer.observe(el));
+
+    // Form submit
+    function handleSubmit(e) {
+      e.preventDefault();
+      const btn = document.getElementById('submitBtn');
+      btn.textContent = 'Sending…';
+      btn.disabled = true;
+      setTimeout(() => {
+        btn.textContent = '✓ Request Received! We\'ll be in touch soon.';
+        btn.style.background = '#1D7E50';
+      }, 1200);
+    }
+
+    (function () {
+    var modal = document.getElementById('businessAppModal');
+    var modalBody = document.getElementById('appModalBody');
+    var formLoaded = false;
+
+    function openModal(e) {
+      if (e) e.preventDefault();
+
+      // Inject the Jotform embed script only the first time the modal opens
+      if (!formLoaded) {
+        var script = document.createElement('script');
+        script.type = 'text/javascript';
+        script.src = 'https://form.jotform.com/jsform/262035431468152';
+        modalBody.appendChild(script);
+        formLoaded = true;
+      }
+
+      modal.classList.add('is-open');
+      modal.setAttribute('aria-hidden', 'false');
+      document.body.classList.add('app-modal-locked');
+    }
+
+    function closeModal() {
+      modal.classList.remove('is-open');
+      modal.setAttribute('aria-hidden', 'true');
+      document.body.classList.remove('app-modal-locked');
+    }
+
+    // Wire up every "Get started" link that points to #businessApp
+    document.querySelectorAll('a[href="#businessApp"]').forEach(function (link) {
+      link.addEventListener('click', openModal);
+    });
+
+    // Close on overlay click or × button
+    modal.querySelectorAll('[data-close-modal]').forEach(function (el) {
+      el.addEventListener('click', closeModal);
+    });
+
+    // Close on Escape key
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && modal.classList.contains('is-open')) {
+        closeModal();
+      }
+    });
+  })();
+
+  (function () {
+    var modal = document.getElementById('personalAppModal');
+    var modalBody = document.getElementById('personalAppModalBody');
+    var formLoaded = false;
+
+    function openModal(e) {
+      if (e) e.preventDefault();
+
+      // Inject the Jotform embed script only the first time the modal opens
+      if (!formLoaded) {
+        var script = document.createElement('script');
+        script.type = 'text/javascript';
+        script.src = 'https://form.jotform.com/jsform/262037243284151';
+        modalBody.appendChild(script);
+        formLoaded = true;
+      }
+
+      modal.classList.add('is-open');
+      modal.setAttribute('aria-hidden', 'false');
+      document.body.classList.add('app-modal-locked');
+    }
+
+    function closeModal() {
+      modal.classList.remove('is-open');
+      modal.setAttribute('aria-hidden', 'true');
+      document.body.classList.remove('app-modal-locked');
+    }
+
+    // Wire up every "Get started" link that points to #personalApp
+    document.querySelectorAll('a[href="#personalApp"]').forEach(function (link) {
+      link.addEventListener('click', openModal);
+    });
+
+    // Close on overlay click or × button
+    modal.querySelectorAll('[data-close-modal]').forEach(function (el) {
+      el.addEventListener('click', closeModal);
+    });
+
+    // Close on Escape key
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && modal.classList.contains('is-open')) {
+        closeModal();
+      }
+    });
+  })();
+  </script>
+</body>
+</html>
