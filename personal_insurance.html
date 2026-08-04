@@ -1,0 +1,927 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Personal Insurance | Sebastian Williamson Insurance Solutions – Franklin, TN</title>
+  <meta name="description" content="Personal insurance solutions from SWIS: homeowners, auto, umbrella, jewelry & valuables, landlord & investment property, household employee coverage, life & disability income, and more." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="icon" type="image/x-icon" href="SWIS Round Logo-200px.png">
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy:       #0D2340;
+      --navy-mid:   #163255;
+      --navy-light: #1E4A7A;
+      --gold:       #C8973A;
+      --gold-light: #E0B56A;
+      --cream:      #F8F5EF;
+      --cream-dark: #EDE8DE;
+      --text-dark:  #0D1E30;
+      --text-mid:   #3D5470;
+      --text-light: #7A90A8;
+      --white:      #FFFFFF;
+      --section-gap: 6rem;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      color: var(--text-dark);
+      background: var(--white);
+      overflow-x: hidden;
+    }
+
+    a { text-decoration: none; }
+
+    /* ── Topbar ── */
+    .topbar {
+      background: var(--navy);
+      color: #afc5db;
+      font-size: 13px;
+      letter-spacing: 0.02em;
+      padding: 0.45rem 2rem;
+      display: flex;
+      justify-content: flex-end;
+      gap: 2rem;
+    }
+    .topbar a { color: #afc5db; text-decoration: none; transition: color .2s; }
+    .topbar a:hover { color: var(--gold-light); }
+    .topbar span { display: flex; align-items: center; gap: 6px; }
+
+    /* ── Nav ── */
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: var(--white);
+      border-bottom: 1px solid #e4e0d8;
+      padding: 0 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 72px;
+    }
+    .nav-logo { display: flex; align-items: center; gap: 14px; text-decoration: none; }
+    .nav-links { display: flex; align-items: center; gap: 2rem; list-style: none; }
+    .nav-links a { font-size: 14.5px; font-weight: 500; color: var(--text-mid); text-decoration: none; transition: color .2s; }
+    .nav-links a:hover { color: var(--navy); }
+    .nav-links a.active { color: var(--navy); font-weight: 700; }
+    .nav-cta {
+      background: var(--gold);
+      color: var(--white) !important;
+      padding: 10px 22px;
+      border-radius: 4px;
+      font-weight: 600 !important;
+      transition: background .2s !important;
+    }
+    .nav-cta:hover { background: var(--gold-light) !important; color: var(--white) !important; }
+
+    .hamburger { display: none; cursor: pointer; background: none; border: none; flex-direction: column; gap: 5px; }
+    .hamburger span { display: block; width: 24px; height: 2px; background: var(--navy); border-radius: 2px; transition: all .3s; }
+
+    /* ── Page hero (shorter than homepage hero) ── */
+    .hero {
+      background: var(--navy);
+      position: relative;
+      overflow: hidden;
+      min-height: 52vh;
+      display: flex;
+      align-items: center;
+    }
+    .hero-bg {
+      position: absolute; inset: 0;
+      background: linear-gradient(135deg, rgba(13,35,64,0.97) 0%, rgba(22,50,85,0.90) 60%, rgba(30,74,122,0.75) 100%);
+    }
+    .hero-pattern {
+      position: absolute; inset: 0; opacity: 0.04;
+      background-image: repeating-linear-gradient(0deg, transparent, transparent 39px, #fff 39px, #fff 40px),
+                        repeating-linear-gradient(90deg, transparent, transparent 39px, #fff 39px, #fff 40px);
+    }
+    .hero-accent {
+      position: absolute;
+      right: -80px; top: 50%;
+      transform: translateY(-50%);
+      width: 560px; height: 560px;
+      border: 1px solid rgba(200,151,58,0.15);
+      border-radius: 50%;
+    }
+    .hero-accent::before {
+      content: '';
+      position: absolute; inset: 60px;
+      border: 1px solid rgba(200,151,58,0.1);
+      border-radius: 50%;
+    }
+    .hero-inner {
+      position: relative; z-index: 2;
+      max-width: 1200px; margin: 0 auto;
+      padding: 5rem 2rem;
+      width: 100%;
+    }
+    .hero-breadcrumb {
+      font-size: 13px; font-weight: 500; color: #7a9ab8;
+      margin-bottom: 1.6rem;
+    }
+    .hero-breadcrumb a { color: #afc5db; text-decoration: none; }
+    .hero-breadcrumb a:hover { color: var(--gold-light); }
+    .hero-eyebrow {
+      display: inline-flex; align-items: center; gap: 10px;
+      font-size: 14px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1.6rem;
+    }
+    .hero-eyebrow::before { content: ''; display: block; width: 28px; height: 1.5px; background: var(--gold); }
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.4rem, 4.5vw, 4rem);
+      font-weight: 700;
+      color: var(--white);
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      max-width: 720px;
+      margin-bottom: 1.6rem;
+    }
+    .hero h1 em { color: var(--gold); font-style: normal; }
+    .hero p {
+      font-size: 1.1rem;
+      font-weight: 300;
+      color: #afc5db;
+      max-width: 560px;
+      line-height: 1.75;
+      margin-bottom: 2.4rem;
+    }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 1rem; }
+    .btn-primary {
+      background: var(--gold);
+      color: var(--white);
+      text-decoration: none;
+      padding: 15px 32px;
+      font-size: 15px; font-weight: 600;
+      border-radius: 4px;
+      border: 2px solid var(--gold);
+      transition: background .2s, border-color .2s;
+      display: inline-flex; align-items: center; gap: 8px;
+      cursor: pointer;
+    }
+    .btn-primary:hover { background: var(--gold-light); border-color: var(--gold-light); }
+    .btn-outline {
+      background: transparent;
+      color: var(--white);
+      text-decoration: none;
+      padding: 15px 32px;
+      font-size: 15px; font-weight: 500;
+      border-radius: 4px;
+      border: 2px solid rgba(255,255,255,0.3);
+      transition: border-color .2s, background .2s;
+      display: inline-flex; align-items: center; gap: 8px;
+    }
+    .btn-outline:hover { border-color: rgba(255,255,255,0.7); background: rgba(255,255,255,0.06); }
+
+    /* ── Section scaffolding ── */
+    section { padding: var(--section-gap) 2rem; }
+    .section-inner { max-width: 1200px; margin: 0 auto; }
+    .section-label {
+      display: inline-flex; align-items: center; gap: 10px;
+      font-size: 14px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1rem;
+    }
+    .section-label::before { content: ''; display: block; width: 22px; height: 1.5px; background: var(--gold); }
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 3.5vw, 2.8rem);
+      font-weight: 700;
+      color: var(--navy);
+      line-height: 1.15;
+      letter-spacing: -0.015em;
+    }
+    .section-lead {
+      font-size: 1.05rem; font-weight: 300;
+      color: var(--text-mid);
+      line-height: 1.8;
+      max-width: 600px;
+      margin-top: 1rem;
+    }
+
+    /* ── In-page quick-jump strip ── */
+    .quicklinks {
+      background: var(--cream);
+      border-bottom: 1px solid var(--cream-dark);
+      padding: 1.1rem 2rem;
+      position: sticky;
+      top: 72px;
+      z-index: 90;
+    }
+    .quicklinks-inner {
+      max-width: 1200px; margin: 0 auto;
+      display: flex; align-items: center; gap: 1.6rem;
+      flex-wrap: wrap;
+    }
+    .quicklinks-label {
+      font-size: 11.5px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
+      color: var(--text-light); flex-shrink: 0;
+    }
+    .quicklinks a {
+      font-size: 13.5px; font-weight: 500; color: var(--text-mid);
+      white-space: nowrap; transition: color .2s;
+    }
+    .quicklinks a:hover { color: var(--navy); }
+
+    /* ── Detailed coverage rows ── */
+    #coverage-detail { background: var(--white); }
+    .detail-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+      padding: 3.2rem 0;
+      border-bottom: 1px solid var(--cream-dark);
+    }
+    .detail-row:first-child { padding-top: 0; }
+    .detail-row:last-child { border-bottom: none; padding-bottom: 0; }
+    .detail-row.reverse .detail-visual { order: 2; }
+    .detail-visual { position: relative; }
+    .detail-img-wrap {
+      width: 100%;
+      height: 320px;
+      border-radius: 8px;
+      overflow: hidden;
+      background: var(--cream-dark);
+    }
+    .detail-img-wrap img {
+      width: 100%; height: 100%;
+      object-fit: cover; object-position: center;
+      display: block;
+    }
+    .detail-tag {
+      position: absolute;
+      top: 16px; left: 16px;
+      background: var(--navy);
+      color: var(--gold-light);
+      font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
+      padding: 7px 13px;
+      border-radius: 100px;
+    }
+    .detail-content h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.7rem; font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 0.9rem;
+      letter-spacing: -0.01em;
+    }
+    .detail-desc {
+      font-size: 0.98rem; font-weight: 300;
+      color: var(--text-mid);
+      line-height: 1.85;
+      margin-bottom: 1.4rem;
+    }
+    .detail-list { list-style: none; display: flex; flex-direction: column; gap: 0.7rem; margin-bottom: 1.7rem; }
+    .detail-list li {
+      display: flex; align-items: flex-start; gap: 10px;
+      font-size: 14px; font-weight: 400;
+      color: var(--text-mid); line-height: 1.65;
+    }
+    .detail-check {
+      width: 18px; height: 18px; flex-shrink: 0; margin-top: 2px;
+      background: #DFF0E7;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .detail-check svg { width: 10px; height: 10px; color: #1D7E50; }
+    .detail-cta {
+      font-size: 14px; font-weight: 600;
+      color: var(--gold);
+      text-decoration: none;
+      letter-spacing: 0.03em;
+      display: inline-flex; align-items: center; gap: 6px;
+      transition: gap .2s;
+    }
+    .detail-cta:hover { gap: 10px; }
+
+    /* ── Additional coverage tile grid ── */
+    #more-coverage { background: var(--cream); }
+    .services-grid-3col {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5px;
+      background: var(--cream-dark);
+      border: 1.5px solid var(--cream-dark);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    .service-card {
+      background: var(--white);
+      padding: 2.2rem;
+      position: relative;
+      transition: background .2s;
+      cursor: default;
+    }
+    .service-card:hover { background: #fafcff; }
+    .service-card h3 { font-size: 17px; font-weight: 600; color: var(--navy); margin-bottom: 0.6rem; }
+    .service-card p { font-size: 14px; font-weight: 300; color: var(--text-mid); line-height: 1.75; margin-bottom: 1.4rem; }
+    .service-link {
+      font-size: 13px; font-weight: 600; color: var(--gold);
+      text-decoration: none; letter-spacing: 0.03em;
+      display: inline-flex; align-items: center; gap: 5px;
+      transition: gap .2s;
+    }
+    .service-link:hover { gap: 9px; }
+    .service-img-wrap {
+      width: calc(100% + 4.4rem);
+      margin: -2.2rem -2.2rem 1.6rem -2.2rem;
+      height: 180px;
+      overflow: hidden;
+      background: var(--cream-dark);
+    }
+    .service-img { width: 100%; height: 100%; object-fit: cover; object-position: center; display: block; transition: transform .4s ease; }
+    .service-card:hover .service-img { transform: scale(1.04); }
+
+    /* ── CTA band ── */
+    .cta-band {
+      background: var(--navy);
+      border-radius: 10px;
+      padding: 3rem 3.2rem;
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 2rem; flex-wrap: wrap;
+    }
+    .cta-band h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.6rem; font-weight: 700;
+      color: var(--white);
+      max-width: 480px;
+      line-height: 1.25;
+    }
+    .cta-band p { font-size: 14px; color: #afc5db; margin-top: 0.6rem; font-weight: 300; }
+
+    /* ── Footer ── */
+    footer { background: var(--navy); color: #8aacca; padding: 4rem 2rem 2rem; }
+    .footer-inner { max-width: 1200px; margin: 0 auto; }
+    .footer-top {
+      display: grid; grid-template-columns: 1.8fr 1fr 1fr 1fr;
+      gap: 3rem; padding-bottom: 3rem;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .footer-brand p { font-size: 13.5px; font-weight: 300; color: #7a9ab8; line-height: 1.75; margin-top: 1.2rem; }
+    .footer-col h4 { font-size: 11.5px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--white); margin-bottom: 1.1rem; }
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 0.65rem; }
+    .footer-col a { font-size: 13.5px; color: #7a9ab8; text-decoration: none; transition: color .2s; }
+    .footer-col a:hover { color: var(--gold-light); }
+    .footer-bottom { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1rem; padding-top: 2rem; }
+    .footer-bottom p { font-size: 12.5px; color: #4f6e8a; }
+    .footer-bottom a { color: #4f6e8a; text-decoration: none; }
+    .footer-bottom a:hover { color: #7a9ab8; }
+    nav img { max-width: 425px; width: 100%; height: auto; }
+    .footer-brand img { max-width: 325px; width: 100%; height: auto; }
+
+    /* ── Mobile nav ── */
+    @media (max-width: 900px) {
+      .nav-links { display: none; flex-direction: column; gap: 0; position: absolute; top: 72px; left: 0; right: 0; background: var(--white); border-bottom: 1px solid #e4e0d8; padding: 1rem 0; }
+      .nav-links.open { display: flex; }
+      .nav-links li { width: 100%; }
+      .nav-links a { display: block; padding: 12px 2rem; }
+      .nav-cta { margin: 8px 2rem; text-align: center; border-radius: 4px; }
+      .hamburger { display: flex; }
+      nav { position: relative; }
+      .footer-top { grid-template-columns: 1fr 1fr; }
+      .detail-row { grid-template-columns: 1fr; gap: 2rem; }
+      .detail-row.reverse .detail-visual { order: 0; }
+      .detail-img-wrap { height: 220px; }
+      .services-grid-3col { grid-template-columns: repeat(2, 1fr); }
+      .quicklinks { top: 0; }
+      :root { --section-gap: 4rem; }
+      section { padding: var(--section-gap) 1.25rem; }
+      .hero-inner { padding: 3.5rem 1.25rem; }
+      .cta-band { padding: 2.2rem 1.6rem; text-align: center; justify-content: center; }
+    }
+    @media (max-width: 640px) {
+      .topbar { justify-content: center; flex-wrap: wrap; gap: 0.6rem 1.5rem; padding: 0.5rem 1rem; font-size: 12px; text-align: center; }
+      nav { padding: 0 1.25rem; }
+      nav img { max-width: 300px; }
+      .footer-brand img { max-width: 300px; }
+    }
+    @media (max-width: 560px) {
+      .footer-top { grid-template-columns: 1fr; }
+      .hero h1 { font-size: 2.2rem; }
+    }
+    @media (max-width: 480px) {
+      .services-grid-3col { grid-template-columns: 1fr; }
+      .hero h1 { font-size: 1.9rem; }
+      .hero p { font-size: 1rem; }
+      .btn-primary, .btn-outline { width: 100%; justify-content: center; }
+    }
+
+    /* ── Animate on scroll ── */
+    .reveal { opacity: 0; transform: translateY(28px); transition: opacity .65s ease, transform .65s ease; }
+    .reveal.visible { opacity: 1; transform: none; }
+    .reveal-delay-1 { transition-delay: .1s; }
+    .reveal-delay-2 { transition-delay: .2s; }
+    .reveal-delay-3 { transition-delay: .3s; }
+
+    .shimmer-text {
+      background: linear-gradient(100deg, var(--gold) 40%, #fff3d6 50%, var(--gold) 60%);
+      background-size: 250% 100%;
+      -webkit-background-clip: text; background-clip: text;
+      color: transparent; -webkit-text-fill-color: transparent;
+      animation: shimmer-sweep 10s linear infinite;
+    }
+    @keyframes shimmer-sweep { 0% { background-position: 200% 0; } 100% { background-position: -200% 0; } }
+
+    /* ── Get Started modal (same as homepage) ── */
+    .app-modal { position: fixed; inset: 0; z-index: 9999; display: none; }
+    .app-modal.is-open { display: block; }
+    .app-modal-overlay { position: absolute; inset: 0; background: rgba(20, 20, 20, 0.6); backdrop-filter: blur(2px); opacity: 0; transition: opacity 0.25s ease; }
+    .app-modal.is-open .app-modal-overlay { opacity: 1; }
+    .app-modal-panel {
+      position: relative; max-width: 800px; width: min(92vw, 800px); max-height: 88vh;
+      margin: 5vh auto; background: #fff; border-radius: 10px;
+      border: 1.5px solid var(--cream-dark, #ddd7c6);
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+      display: flex; flex-direction: column; overflow: hidden;
+      transform: translateY(16px) scale(0.98); opacity: 0;
+      transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+    .app-modal.is-open .app-modal-panel { transform: translateY(0) scale(1); opacity: 1; }
+    .app-modal-header { display: flex; align-items: center; justify-content: space-between; padding: 1.1rem 1.4rem; border-bottom: 1px solid var(--cream-dark, #ddd7c6); background: #fff; }
+    .app-modal-header h3 { margin: 0; font-size: 1.05rem; font-weight: 700; letter-spacing: 0.02em; }
+    .app-modal-close { background: none; border: none; font-size: 1.6rem; line-height: 1; cursor: pointer; color: #555; padding: 0.2rem 0.5rem; border-radius: 6px; transition: background 0.15s ease, color 0.15s ease; }
+    .app-modal-close:hover { background: var(--cream-dark, #f0ece0); color: #111; }
+    .app-modal-body { flex: 1; overflow-y: auto; padding: 0.5rem 0 0; }
+    .app-modal-body iframe { width: 100% !important; border: none; }
+    body.app-modal-locked { overflow: hidden; }
+  </style>
+</head>
+<body>
+
+  <!-- Topbar -->
+  <div class="topbar">
+    <span>
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+      <a href="mailto:info@sebastianwilliamson.com ?subject=Request%20a%20Consultation">info@sebastianwilliamson.com</a>
+    </span>
+    <span>
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.91a16 16 0 006.08 6.08l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+      <a href="tel:6158619153">615-861-9153</a>
+    </span>
+  </div>
+
+  <!-- Nav -->
+  <nav>
+    <a href="index.html"><img src="SWIS Logo - 2023-01(1500-268px).png" width="425"></a>
+
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="index.html#services">Commercial Insurance</a></li>
+      <li><a href="personal_insurance.html" class="active">Personal Insurance</a></li>
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="index.html#testimonials">Reviews</a></li>
+      <li><a href="https://customerservice.agentinsure.com/EzLynxCustomerService/web/sebastwilinsso/account/login" target="_blank" rel="noopener noreferrer">Client Center
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+        <polyline points="15 3 21 3 21 9"></polyline>
+        <line x1="10" y1="14" x2="21" y2="3"></line>
+      </svg></a></li>
+      <li><a href="#personalApp" class="nav-cta">Get Started</a></li>
+    </ul>
+
+    <button class="hamburger" id="hamburger" aria-label="Toggle navigation">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-pattern"></div>
+    <div class="hero-accent"></div>
+    <div class="hero-inner">
+      <div class="hero-breadcrumb reveal"><a href="index.html">Home</a> &nbsp;/&nbsp; Personal Insurance</div>
+      <div class="hero-eyebrow reveal reveal-delay-1">Individuals &amp; Families · Tennessee</div>
+      <h1 class="reveal reveal-delay-2">Insurance Built Around<br/>the <em>Life You've Built</em></h1>
+      <p class="reveal reveal-delay-3">From the roof over your head to the car in your driveway, your valuables, and the people who help run your household — we shop dozens of A-rated carriers to build coverage that actually fits your life.</p>
+      <div class="hero-actions reveal reveal-delay-3">
+        <a href="#personalApp" class="btn-primary">
+          Get Started
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+        <a href="#coverage-detail" class="btn-outline">Explore Coverage Options
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quick jump strip -->
+  <div class="quicklinks">
+    <div class="quicklinks-inner">
+      <span class="quicklinks-label">Jump to</span>
+      <a href="#homeowners">Homeowners</a>
+      <a href="#auto">Auto</a>
+      <a href="#umbrella">Umbrella</a>
+      <a href="#jewelry">Jewelry &amp; Valuables</a>
+      <a href="#landlord">Landlord &amp; Investment Property</a>
+      <a href="#domestic-staff">Household Employees</a>
+      <a href="#life-disability">Life &amp; Disability</a>
+      <a href="#more-coverage">More Coverage</a>
+    </div>
+  </div>
+
+  <!-- Detailed coverage -->
+  <section id="coverage-detail">
+    <div class="section-inner">
+      <span class="section-label reveal">What We Cover</span>
+      <h2 class="section-title reveal reveal-delay-1">Personal coverage,<br/><em style="font-style:italic; color: var(--gold);">explained</em> in plain English</h2>
+      <p class="section-lead reveal reveal-delay-2">A closer look at the core pieces of a well-built personal insurance program. Every household is different — this is where we start the conversation.</p>
+
+      <div style="margin-top: 3.5rem;">
+
+        <!-- Homeowners -->
+        <div id="homeowners" class="detail-row reveal">
+          <div class="detail-visual">
+            <span class="detail-tag">Homeowners</span>
+            <div class="detail-img-wrap">
+              <!-- Add your own image here — recommended ~1000x750px -->
+              <img src="images/house (png).png" alt="Homeowners Insurance" />
+            </div>
+          </div>
+          <div class="detail-content">
+            <h3>Homeowners Insurance</h3>
+            <p class="detail-desc">Your home is likely your largest asset — the right policy protects the structure, your belongings, and you, if someone is ever injured on your property.</p>
+            <ul class="detail-list">
+              <li><span class="detail-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Dwelling, other structures, and personal property coverage built to true replacement cost</li>
+              <li><span class="detail-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Personal liability and medical payments protection for guests and accidents on your property</li>
+              <li><span class="detail-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Loss-of-use coverage so you're taken care of if you're ever displaced from your home</li>
+              <li><span class="detail-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Optional endorsements for water backup, service line, and equipment breakdown</li>
+            </ul>
+            <a href="#personalApp" class="detail-cta"><span class="shimmer-text">Get started</span> →</a>
+          </div>
+        </div>
+
+        <!-- Auto -->
+        <div id="auto" class="detail-row reverse reveal">
+          <div class="detail-visual">
+            <span class="detail-tag">Auto</span>
+            <div class="detail-img-wrap">
+              <!-- Add your own image here — recommended ~1000x750px -->
+              <img src="images/auto (png).png" alt="Primary Personal Auto Insurance" />
+            </div>
+          </div>
+          <div class="detail-content">
+            <h3>Primary Personal Auto</h3>
+            <p class="detail-desc">Liability, collision, and comprehensive coverage for your everyday vehicles — shopped across carriers so you're not overpaying for the coverage you actually need.</p>
+            <ul class="detail-list">
+              <li><span class="detail-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Bodily injury and property damage liability limits built to protect your assets, not just meet the minimum</li>
+              <li><span class="detail-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Collision and comprehensive coverage for repair or replacement of your vehicle</li>
+              <li><span class="detail-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Uninsured/underinsured motorist protection and rental reimbursement</li>
+              <li><span class="detail-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Multi-vehicle and multi-policy bundling discounts across your household</li>
+            </ul>
+            <a href="#personalApp" class="detail-cta"><span class="shimmer-text">Get started</span> →</a>
+          </div>
+        </div>
+
+        <!-- Umbrella -->
+        <div id="umbrella" class="detail-row reveal">
+          <div class="detail-visual">
+            <span class="detail-tag">Umbrella</span>
+            <div class="detail-img-wrap">
+              <!-- Add your own image here — recommended ~1000x750px -->
+              <img src="images/umbrella (png).png" alt="Personal Umbrella / Excess Liability Insurance" />
+            </div>
+          </div>
+          <div class="detail-content">
+            <h3>Personal Umbrella / Excess Liability</h3>
+            <p class="detail-desc">An affordable extra layer of liability protection that sits above your home and auto policies, guarding your savings and future earnings from a serious lawsuit or judgment.</p>
+            <ul class="detail-list">
+              <li><span class="detail-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Additional liability limits in $1M increments, layered over your existing policies</li>
+              <li><span class="detail-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Coverage that follows you — auto accidents, property incidents, even some personal injury claims like libel or slander</li>
+              <li><span class="detail-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Broader worldwide protection than most underlying policies provide on their own</li>
+              <li><span class="detail-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Especially important for households with teen drivers, rental properties, pools, or higher net worth</li>
+            </ul>
+            <a href="#personalApp" class="detail-cta"><span class="shimmer-text">Get started</span> →</a>
+          </div>
+        </div>
+
+        <!-- Jewelry & Valuables -->
+        <div id="jewelry" class="detail-row reverse reveal">
+          <div class="detail-visual">
+            <span class="detail-tag">Jewelry &amp; Valuables</span>
+            <div class="detail-img-wrap">
+              <!-- Add your own image here — recommended ~1000x750px -->
+              <img src="images/jewelry (png).png" alt="Jewelry and Valuables Insurance" />
+            </div>
+          </div>
+          <div class="detail-content">
+            <h3>Jewelry, Fine Art &amp; Valuables</h3>
+            <p class="detail-desc">Standard homeowners policies cap what they'll pay for jewelry, watches, art, and collectibles. Scheduled personal property coverage insures these items at their real, appraised value.</p>
+            <ul class="detail-list">
+              <li><span class="detail-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Agreed or appraised value coverage for engagement rings, heirlooms, and fine jewelry</li>
+              <li><span class="detail-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Coverage for fine art, wine, musical instruments, and collectibles</li>
+              <li><span class="detail-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>No deductible on most scheduled items, with worldwide coverage for loss, theft, or mysterious disappearance</li>
+              <li><span class="detail-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>We'll help you get items appraised and scheduled correctly from the start</li>
+            </ul>
+            <a href="#personalApp" class="detail-cta"><span class="shimmer-text">Get started</span> →</a>
+          </div>
+        </div>
+
+        <!-- Landlord & Investment Property -->
+        <div id="landlord" class="detail-row reveal">
+          <div class="detail-visual">
+            <span class="detail-tag">Landlord &amp; Investment Property</span>
+            <div class="detail-img-wrap">
+              <!-- Add your own image here — recommended ~1000x750px -->
+              <img src="images/vacation home (png).png" alt="Landlord and Investment Property Insurance" />
+            </div>
+          </div>
+          <div class="detail-content">
+            <h3>Landlord &amp; Investment Property Insurance</h3>
+            <p class="detail-desc">A standard homeowners policy isn't built for a property you rent out. Dwelling fire and landlord policies protect the structure, your rental income, and your liability as a landlord.</p>
+            <ul class="detail-list">
+              <li><span class="detail-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Dwelling and other-structures coverage built for a non-owner-occupied or rented property</li>
+              <li><span class="detail-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Loss-of-rents coverage if the property becomes uninhabitable after a covered loss</li>
+              <li><span class="detail-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Landlord liability protection for injuries or damage tied to the rental unit</li>
+              <li><span class="detail-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Portfolio and multi-property programs for landlords with more than one investment property</li>
+            </ul>
+            <a href="#personalApp" class="detail-cta"><span class="shimmer-text">Get started</span> →</a>
+          </div>
+        </div>
+
+        <!-- Household Employees / EPLI -->
+        <div id="domestic-staff" class="detail-row reverse reveal">
+          <div class="detail-visual">
+            <span class="detail-tag">Household Employees</span>
+            <div class="detail-img-wrap">
+              <!-- Add your own image here — recommended ~1000x750px -->
+              <img src="images/domestic staff (png).png" alt="Workers' Comp and EPLI for Domestic Workers" />
+            </div>
+          </div>
+          <div class="detail-content">
+            <h3>Workers' Comp &amp; EPLI for Domestic Staff</h3>
+            <p class="detail-desc">If you employ a nanny, housekeeper, caregiver, or estate staff, you take on employment exposures that fall outside a standard homeowners policy. Household employee coverage closes that gap.</p>
+            <ul class="detail-list">
+              <li><span class="detail-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Workers' compensation coverage for injuries sustained by household employees on the job</li>
+              <li><span class="detail-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Employment Practices Liability (EPLI) for claims of wrongful termination, harassment, or discrimination</li>
+              <li><span class="detail-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Guidance on state-specific requirements for nannies, housekeepers, and estate staff</li>
+              <li><span class="detail-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Protection that a standard homeowners liability policy typically excludes outright</li>
+            </ul>
+            <a href="#personalApp" class="detail-cta"><span class="shimmer-text">Get started</span> →</a>
+          </div>
+        </div>
+
+        <!-- Life & Disability -->
+        <div id="life-disability" class="detail-row reveal">
+          <div class="detail-visual">
+            <span class="detail-tag">Life &amp; Disability</span>
+            <div class="detail-img-wrap">
+              <!-- Add your own image here — recommended ~1000x750px -->
+              <img src="images/family in orchard (png).png" alt="Life Insurance and Disability Income Insurance" />
+            </div>
+          </div>
+          <div class="detail-content">
+            <h3>Life Insurance &amp; Disability Income</h3>
+            <p class="detail-desc">Life insurance protects your family if you're gone. Disability income insurance protects your family's finances if an illness or injury keeps you from working — a risk that's often overlooked.</p>
+            <ul class="detail-list">
+              <li><span class="detail-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Term and permanent life insurance sized to your family's income replacement needs</li>
+              <li><span class="detail-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Short- and long-term disability income coverage to protect your paycheck</li>
+              <li><span class="detail-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Coverage for self-employed individuals and business owners without an employer group plan</li>
+              <li><span class="detail-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Policy reviews as your family, income, and mortgage change over time</li>
+            </ul>
+            <a href="#personalApp" class="detail-cta"><span class="shimmer-text">Get started</span> →</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- More personal coverage -->
+  <section id="more-coverage">
+    <div class="section-inner">
+      <span class="section-label reveal">And More</span>
+      <h2 class="section-title reveal reveal-delay-1">Additional personal<br/>coverage we place</h2>
+      <p class="section-lead reveal reveal-delay-2">Beyond the core pieces above, we also place coverage for the parts of life that don't fit a one-size-fits-all policy.</p>
+
+      <div class="services-grid-3col" style="margin-top: 3rem;">
+
+        <div class="service-card reveal">
+          <div class="service-img-wrap">
+            <!-- Add your own image here — recommended 800x450px -->
+            <img src="images/renters (png).png" alt="Renters Insurance" class="service-img" />
+          </div>
+          <h3>Renters Insurance</h3>
+          <p>Affordable protection for your belongings and personal liability while you rent — often required by landlords, always a good idea.</p>
+          <a href="#personalApp" class="service-link">Get started →</a>
+        </div>
+
+        <div class="service-card reveal">
+          <div class="service-img-wrap">
+            <img src="images/mask (png).png" alt="Identity Theft and Cyber Risk" class="service-img" />
+          </div>
+          <h3>Identity Theft &amp; Cyber Risk</h3>
+          <p>Personal cyber coverage for fraud reimbursement, identity restoration, cyber extortion, and online reputation protection.</p>
+          <a href="#personalApp" class="service-link">Get started →</a>
+        </div>
+
+        <div class="service-card reveal">
+          <div class="service-img-wrap">
+            <img src="images/classic porsche (png).png" alt="Classic and Specialty Auto Insurance" class="service-img" />
+          </div>
+          <h3>Classic &amp; Specialty Auto</h3>
+          <p>Agreed-value coverage for classic cars, collector vehicles, exotic autos, and motorcycles, with no depreciation at claim time.</p>
+          <a href="#personalApp" class="service-link">Get started →</a>
+        </div>
+
+        <div class="service-card reveal">
+          <div class="service-img-wrap">
+            <img src="images/boating (png).png" alt="Boat, Yacht and Watercraft Insurance" class="service-img" />
+          </div>
+          <h3>Boat, Yacht &amp; Watercraft</h3>
+          <p>Hull, liability, and uninsured watercraft coverage for fishing boats, pontoons, sailboats, and yachts on Tennessee's lakes and beyond.</p>
+          <a href="#personalApp" class="service-link">Get started →</a>
+        </div>
+
+        <div class="service-card reveal">
+          <div class="service-img-wrap">
+            <img src="images/airplane (png).png" alt="Aviation Insurance" class="service-img" />
+          </div>
+          <h3>Aviation</h3>
+          <p>Aircraft hull, liability, and hangar coverage for private pilots and their valuable aviation investment.</p>
+          <a href="#personalApp" class="service-link">Get started →</a>
+        </div>
+
+        <!-- <div class="service-card reveal">
+          <div class="service-img-wrap">
+            <img src="images/vacation home (png).png" alt="Vacation and Short-Term Rental Property Insurance" class="service-img" />
+          </div>
+          <h3>Vacation &amp; Short-Term Rental Properties</h3>
+          <p>Coverage for cabins, condos, and beach properties, including loss of rental income and liability protection when guests arrive.</p>
+          <a href="#personalApp" class="service-link">Get started →</a>
+        </div> -->
+
+        <div class="service-card reveal">
+          <div class="service-img-wrap">
+            <img src="images/family (png).png" alt="Global Travel and Kidnap and Ransom Protection" class="service-img" />
+          </div>
+          <h3>Global Travel &amp; K&amp;R Protection</h3>
+          <p>For families with a global footprint, coverage that goes wherever your passport does, including access to crisis response professionals.</p>
+          <a href="#personalApp" class="service-link">Get started →</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA band -->
+  <section style="background: var(--white); padding-top: 0;">
+    <div class="section-inner">
+      <div class="cta-band reveal">
+        <div>
+          <h3>Not sure where to start?</h3>
+          <p>Tell us a bit about your household and we'll put together a coverage plan built around it — no obligation, no pressure.</p>
+        </div>
+        <a href="#personalApp" class="btn-primary">
+          Get Started
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Get Started Modal -->
+  <div id="personalAppModal" class="app-modal" aria-hidden="true">
+    <div class="app-modal-overlay" data-close-modal></div>
+    <div class="app-modal-panel" role="dialog" aria-modal="true" aria-labelledby="personalAppModalTitle">
+      <div class="app-modal-header">
+        <h3 id="personalAppModalTitle">Personal Insurance Application</h3>
+        <button type="button" class="app-modal-close" data-close-modal aria-label="Close">&times;</button>
+      </div>
+      <div class="app-modal-body" id="personalAppModalBody">
+        <!-- Jotform script gets injected here on first open -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="nav-logo">
+            <img src="SWIS Logo - 2023-01(1500-268px).png" width="325">
+          </div>
+          <p>An independent insurance agency proudly serving the Volunteer State. We shop. You save. You're covered.</p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Personal Coverage</h4>
+          <ul>
+            <li><a href="#homeowners">Homeowners</a></li>
+            <li><a href="#auto">Auto Insurance</a></li>
+            <li><a href="#umbrella">Umbrella</a></li>
+            <li><a href="#jewelry">Jewelry &amp; Valuables</a></li>
+            <li><a href="#landlord">Landlord &amp; Investment Property</a></li>
+            <li><a href="#life-disability">Life &amp; Disability</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="index.html#about">About Us</a></li>
+            <li><a href="index.html#process">How It Works</a></li>
+            <li><a href="index.html#testimonials">Reviews</a></li>
+            <li><a href="index.html#services">Commercial Insurance</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="tel:6158619153">615-861-9153</a></li>
+            <li><a href="mailto:info@sebastianwilliamson.com">info@sebastianwilliamson.com</a></li>
+            <li><a href="#personalApp">Get Started</a></li>
+            <li><a href="https://www.linkedin.com/company/sebastian-williamson-insurance-solutions-llc/about/" target="_blank" rel="noopener">LinkedIn</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2026 Sebastian Williamson Insurance Solutions, LLC. All rights reserved.</p>
+        <p>
+          <a href="#personalApp">Privacy Policy</a> &nbsp;·&nbsp;
+          <a href="#personalApp">Terms of Use</a> &nbsp;·&nbsp;
+          Franklin, TN 37067
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile nav
+    const hamburger = document.getElementById('hamburger');
+    const navLinks  = document.getElementById('navLinks');
+    hamburger.addEventListener('click', () => {
+      navLinks.classList.toggle('open');
+    });
+    navLinks.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => navLinks.classList.remove('open'));
+    });
+
+    // Scroll reveal
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          observer.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    reveals.forEach(el => observer.observe(el));
+
+    // Get Started modal — wired to every link pointing at #personalApp
+    (function () {
+      var modal = document.getElementById('personalAppModal');
+      var modalBody = document.getElementById('personalAppModalBody');
+      var formLoaded = false;
+
+      function openModal(e) {
+        if (e) e.preventDefault();
+
+        if (!formLoaded) {
+          var script = document.createElement('script');
+          script.type = 'text/javascript';
+          script.src = 'https://form.jotform.com/jsform/262037243284151';
+          modalBody.appendChild(script);
+          formLoaded = true;
+        }
+
+        modal.classList.add('is-open');
+        modal.setAttribute('aria-hidden', 'false');
+        document.body.classList.add('app-modal-locked');
+      }
+
+      function closeModal() {
+        modal.classList.remove('is-open');
+        modal.setAttribute('aria-hidden', 'true');
+        document.body.classList.remove('app-modal-locked');
+      }
+
+      document.querySelectorAll('a[href="#personalApp"]').forEach(function (link) {
+        link.addEventListener('click', openModal);
+      });
+
+      modal.querySelectorAll('[data-close-modal]').forEach(function (el) {
+        el.addEventListener('click', closeModal);
+      });
+
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && modal.classList.contains('is-open')) {
+          closeModal();
+        }
+      });
+    })();
+  </script>
+</body>
+</html>
