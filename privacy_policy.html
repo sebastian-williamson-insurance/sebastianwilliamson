@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy | Sebastian Williamson Insurance Solutions</title>
+  <meta name="description" content="Privacy Policy for Sebastian Williamson Insurance Solutions (SWIS), an independent insurance agency serving Tennessee." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="icon" type="image/x-icon" href="SWIS Round Logo-200px.png">
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy:       #0D2340;
+      --navy-mid:   #163255;
+      --navy-light: #1E4A7A;
+      --gold:       #C8973A;
+      --gold-light: #E0B56A;
+      --cream:      #F8F5EF;
+      --cream-dark: #EDE8DE;
+      --text-dark:  #0D1E30;
+      --text-mid:   #3D5470;
+      --text-light: #7A90A8;
+      --white:      #FFFFFF;
+      --section-gap: 6rem;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      color: var(--text-dark);
+      background: var(--white);
+      overflow-x: hidden;
+    }
+
+    a { text-decoration: none; }
+
+    /* ── Topbar ── */
+    .topbar {
+      background: var(--navy);
+      color: #afc5db;
+      font-size: 13px;
+      letter-spacing: 0.02em;
+      padding: 0.45rem 2rem;
+      display: flex;
+      justify-content: flex-end;
+      gap: 2rem;
+    }
+    .topbar a { color: #afc5db; text-decoration: none; transition: color .2s; }
+    .topbar a:hover { color: var(--gold-light); }
+    .topbar span { display: flex; align-items: center; gap: 6px; }
+
+    /* ── Nav ── */
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: var(--white);
+      border-bottom: 1px solid #e4e0d8;
+      padding: 0 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 72px;
+    }
+    .nav-links { display: flex; align-items: center; gap: 2rem; list-style: none; }
+    .nav-links a { font-size: 14.5px; font-weight: 500; color: var(--text-mid); text-decoration: none; transition: color .2s; }
+    .nav-links a:hover { color: var(--navy); }
+    .nav-cta {
+      background: var(--gold);
+      color: var(--white) !important;
+      padding: 10px 22px;
+      border-radius: 4px;
+      font-weight: 600 !important;
+      transition: background .2s !important;
+    }
+    .nav-cta:hover { background: var(--gold-light) !important; color: var(--white) !important; }
+
+    .hamburger { display: none; cursor: pointer; background: none; border: none; flex-direction: column; gap: 5px; }
+    .hamburger span { display: block; width: 24px; height: 2px; background: var(--navy); border-radius: 2px; transition: all .3s; }
+
+    /* ── Page header banner ── */
+    .legal-hero {
+      background: var(--navy);
+      position: relative;
+      overflow: hidden;
+      padding: 3.6rem 2rem;
+    }
+    .legal-hero-bg {
+      position: absolute; inset: 0;
+      background: linear-gradient(135deg, rgba(13,35,64,0.97) 0%, rgba(22,50,85,0.90) 60%, rgba(30,74,122,0.75) 100%);
+    }
+    .legal-hero-inner {
+      position: relative; z-index: 2;
+      max-width: 900px; margin: 0 auto;
+    }
+    .legal-eyebrow {
+      display: inline-flex; align-items: center; gap: 10px;
+      font-size: 13px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1.2rem;
+    }
+    .legal-eyebrow::before { content: ''; display: block; width: 24px; height: 1.5px; background: var(--gold); }
+    .legal-hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 700;
+      color: var(--white);
+      letter-spacing: -0.01em;
+      margin-bottom: 0.9rem;
+    }
+    .legal-hero p {
+      font-size: 0.95rem;
+      font-weight: 300;
+      color: #afc5db;
+      max-width: 600px;
+      line-height: 1.7;
+    }
+
+    /* ── Legal content ── */
+    .legal-wrap { background: var(--cream); padding: 4rem 2rem; }
+    .legal-card {
+      max-width: 900px; margin: 0 auto;
+      background: var(--white);
+      border: 1px solid var(--cream-dark);
+      border-radius: 10px;
+      padding: 3rem;
+    }
+    .legal-card h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-top: 2.4rem;
+      margin-bottom: 0.9rem;
+      padding-top: 1.6rem;
+      border-top: 1px solid var(--cream-dark);
+    }
+    .legal-card > p:first-of-type,
+    .legal-card h2:first-child { margin-top: 0; padding-top: 0; border-top: none; }
+    .legal-card p {
+      font-size: 14.5px;
+      font-weight: 300;
+      color: var(--text-mid);
+      line-height: 1.85;
+      margin-bottom: 1.1rem;
+    }
+    .legal-card ul {
+      list-style: none;
+      display: flex; flex-direction: column; gap: 0.7rem;
+      margin: 1rem 0 1.4rem 0;
+    }
+    .legal-card ul li {
+      display: flex; align-items: flex-start; gap: 12px;
+      font-size: 14.5px; font-weight: 300;
+      color: var(--text-mid); line-height: 1.75;
+    }
+    .legal-bullet {
+      width: 7px; height: 7px; flex-shrink: 0;
+      margin-top: 8px;
+      background: var(--gold);
+      border-radius: 50%;
+    }
+    .legal-card strong { color: var(--navy); font-weight: 600; }
+    .legal-contact {
+      margin-top: 2.4rem;
+      padding: 1.6rem 1.8rem;
+      background: var(--cream);
+      border: 1px solid var(--cream-dark);
+      border-radius: 8px;
+    }
+    .legal-contact p { margin-bottom: 0.3rem; font-size: 14px; color: var(--navy); font-weight: 500; }
+    .legal-contact p:first-child { font-weight: 700; }
+    .legal-contact a { color: var(--navy); }
+    .legal-contact a:hover { text-decoration: underline; }
+    .legal-updated { font-size: 12.5px; color: var(--text-light); margin-top: 2.2rem; text-align: right; }
+
+    /* ── Footer ── */
+    footer {
+      background: var(--navy);
+      color: #8aacca;
+      padding: 4rem 2rem 2rem;
+    }
+    .footer-inner { max-width: 1200px; margin: 0 auto; }
+    .footer-top {
+      display: grid;
+      grid-template-columns: 1.6fr 1fr 1fr 1fr;
+      gap: 3rem;
+      padding-bottom: 2.6rem;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .footer-brand .logo-text .brand { color: var(--white); }
+    .footer-brand .logo-text .sub { color: #7a9ab8; }
+    .footer-brand p {
+      font-size: 13.5px; font-weight: 300; color: #7a9ab8;
+      line-height: 1.75; margin-top: 1.2rem; max-width: 320px;
+    }
+    .footer-col h4 {
+      font-size: 13px; font-weight: 700; color: var(--white);
+      text-transform: uppercase; letter-spacing: 0.06em;
+      margin-bottom: 1.2rem;
+    }
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 0.65rem; }
+    .footer-col a { font-size: 13.5px; color: #7a9ab8; text-decoration: none; transition: color .2s; }
+    .footer-col a:hover { color: var(--gold-light); }
+    .footer-bottom {
+      padding-top: 1.8rem;
+      display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1rem;
+    }
+    .footer-bottom p { font-size: 12.5px; color: #4f6e8a; }
+    .footer-bottom a { color: #4f6e8a; text-decoration: none; }
+    .footer-bottom a:hover { color: #7a9ab8; }
+
+    nav img { max-width: 425px; width: 100%; height: auto; }
+    .footer-brand img { max-width: 325px; width: 100%; height: auto; }
+
+    /* ── Mobile nav ── */
+    @media (max-width: 900px) {
+      .nav-links { display: none; flex-direction: column; gap: 0; position: absolute; top: 72px; left: 0; right: 0; background: var(--white); border-bottom: 1px solid #e4e0d8; padding: 1rem 0; }
+      .nav-links.open { display: flex; }
+      .nav-links li { width: 100%; }
+      .nav-links a { display: block; padding: 12px 2rem; }
+      .nav-cta { margin: 8px 2rem; text-align: center; border-radius: 4px; }
+      .hamburger { display: flex; }
+      nav { position: relative; }
+      .footer-top { grid-template-columns: 1fr 1fr; }
+      :root { --section-gap: 4rem; }
+      .legal-card { padding: 2rem; }
+    }
+    @media (max-width: 560px) {
+      .footer-top { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 640px) {
+      .topbar { justify-content: center; flex-wrap: wrap; gap: 0.6rem 1.5rem; padding: 0.5rem 1rem; font-size: 12px; text-align: center; }
+      nav { padding: 0 1.25rem; }
+      nav img { max-width: 300px; }
+      .footer-brand img { max-width: 300px; }
+      .legal-hero { padding: 2.6rem 1.25rem; }
+      .legal-wrap { padding: 2.6rem 1.25rem; }
+      .legal-card { padding: 1.6rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Topbar -->
+  <div class="topbar">
+    <span>
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+      <a href="mailto:info@sebastianwilliamson.com ?subject=Request%20a%20Consultation">info@sebastianwilliamson.com</a>
+    </span>
+    <span>
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.91a16 16 0 006.08 6.08l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+      <a href="tel:6158619153">615-861-9153</a>
+    </span>
+  </div>
+
+  <!-- Nav -->
+  <nav>
+    <a href="index.html"><img src="SWIS Logo - 2023-01(1500-268px).png" width="425"></a>
+
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="commercial_insurance.html">Commercial Insurance</a></li>
+      <li><a href="personal_insurance.html">Personal Insurance</a></li>
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="index.html#testimonials">Reviews</a></li>
+      <li><a href="https://customerservice.agentinsure.com/EzLynxCustomerService/web/sebastwilinsso/account/login" target="_blank" rel="noopener noreferrer">Client Center
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+        <polyline points="15 3 21 3 21 9"></polyline>
+        <line x1="10" y1="14" x2="21" y2="3"></line>
+      </svg></a></li>
+      <li><a href="index.html#quote" class="nav-cta">Contact Us</a></li>
+    </ul>
+
+    <button class="hamburger" id="hamburger" aria-label="Toggle navigation">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- Page Header -->
+  <section class="legal-hero">
+    <div class="legal-hero-bg"></div>
+    <div class="legal-hero-inner">
+      <div class="legal-eyebrow">Legal</div>
+      <h1>Privacy Policy</h1>
+      <p>Sebastian Williamson Insurance Solutions LLC — how we collect, use, disclose, and safeguard your information.</p>
+    </div>
+  </section>
+
+  <!-- Legal Content -->
+  <section class="legal-wrap">
+    <div class="legal-card">
+      <p>Sebastian Williamson Insurance Solutions (“we,” “us,” “our,” or “Agency”) respects your privacy and is committed to protecting the information you share with us. This Privacy Policy explains how we collect, use, disclose, and safeguard information in connection with our insurance services, including quote requests, policy servicing, claims assistance, and other insurance-related transactions. Insurance privacy notices commonly describe the categories of information collected, the categories of disclosures made, the right to opt out of certain disclosures, and the policies used to protect confidentiality and security.</p>
+
+      <p>This Privacy Policy applies to information we collect from consumers, applicants, insureds, policyholders, claimants, beneficiaries, and website visitors in the course of providing insurance products and services. The NAIC model law is designed to govern information collected in connection with insurance transactions and to balance insurers' need for information with consumers' privacy interests.</p>
+
+      <h2>Information We Collect</h2>
+      <p>We may collect personal information and nonpublic personal information (“NPI”) about you from a variety of sources, depending on the products or services you request and the transactions you conduct with us. In the insurance context, privacy notices commonly describe both the categories of information collected and the types of sources used to collect it.</p>
+      <p>The information we collect may include:</p>
+      <ul>
+        <li><span class="legal-bullet"></span>Identifying information, such as your name, address, phone number, email address, date of birth, marital status, and household members.</li>
+        <li><span class="legal-bullet"></span>Government-issued identifiers, such as driver's license numbers, policy numbers, or partial Social Security numbers where permitted or necessary.</li>
+        <li><span class="legal-bullet"></span>Insurance-related information, such as current and prior insurance carriers, coverage details, loss history, claims history, underwriting information, risk characteristics, and policy preferences.</li>
+        <li><span class="legal-bullet"></span>Financial information, such as payment details, billing information, mortgage or lease information, and other information needed to quote, bind, or service coverage.</li>
+        <li><span class="legal-bullet"></span>Property and vehicle information, such as home construction details, occupancy, square footage, roof characteristics, vehicle VINs, driving history, and similar underwriting data.</li>
+        <li><span class="legal-bullet"></span>Sensitive or health-related information, when needed for specific products, claims, or eligibility determinations and where permitted by law.</li>
+        <li><span class="legal-bullet"></span>Communications, such as emails, call notes, text messages, form submissions, chat messages, and other correspondence with us.</li>
+        <li><span class="legal-bullet"></span>Website and device data, such as IP address, browser type, pages visited, referral information, and interaction data collected through cookies or similar technologies.</li>
+      </ul>
+      <p>We may collect information directly from you, from your authorized representatives, from insurance carriers, from public records, from consumer reporting agencies, from claims or loss sources, from inspection or valuation services, and from other third parties involved in the insurance transaction. The NAIC model specifically contemplates collection from persons other than the applicant and from institutional sources in connection with insurance transactions.</p>
+
+      <h2>How We Use Information</h2>
+      <p>We use the information we collect for legitimate business, underwriting, servicing, compliance, and administrative purposes related to our insurance operations. Privacy notices in the insurance industry typically explain the types of information used and the circumstances under which it may be used or disclosed.</p>
+      <p>We may use your information to:</p>
+      <ul>
+        <li><span class="legal-bullet"></span>Evaluate applications for insurance and determine eligibility for coverage.</li>
+        <li><span class="legal-bullet"></span>Obtain quotes and compare coverage options from insurance carriers.</li>
+        <li><span class="legal-bullet"></span>Bind, issue, renew, modify, cancel, or service insurance policies.</li>
+        <li><span class="legal-bullet"></span>Process payments, billing inquiries, endorsements, cancellations, reinstatements, and certificate requests.</li>
+        <li><span class="legal-bullet"></span>Assist with claims, losses, investigations, and coverage questions.</li>
+        <li><span class="legal-bullet"></span>Verify identity, prevent fraud, detect misrepresentation, and maintain the security of our systems.</li>
+        <li><span class="legal-bullet"></span>Comply with legal, regulatory, licensing, tax, audit, and recordkeeping obligations.</li>
+        <li><span class="legal-bullet"></span>Communicate with you about your policies, applications, account status, and service-related matters.</li>
+        <li><span class="legal-bullet"></span>Improve our services, websites, workflows, forms, communications, and customer experience.</li>
+        <li><span class="legal-bullet"></span>Send marketing communications, where permitted by law and subject to any required consent or opt-out rights.</li>
+      </ul>
+      <p>We may also use information for internal analytics, quality assurance, staff training, and operational purposes. Where required, we will identify questions or data fields that are intended solely for marketing or research purposes.</p>
+
+      <h2>How We Share Information</h2>
+      <p>We may disclose information as permitted or required by law to support insurance transactions, service your account, comply with legal obligations, or protect our rights and the rights of others. Insurance privacy notices commonly include descriptions of disclosures to affiliates, non-affiliates, service providers, reinsurers, regulators, and other parties involved in insurance transactions.</p>
+      <p>We may share information with:</p>
+      <ul>
+        <li><span class="legal-bullet"></span>Insurance carriers, underwriters, managing general agents, wholesale brokers, and reinsurers.</li>
+        <li><span class="legal-bullet"></span>Service providers that perform functions on our behalf, such as quoting platforms, customer relationship management systems, payment processors, e-signature vendors, cloud hosting providers, document storage providers, and communication tools.</li>
+        <li><span class="legal-bullet"></span>Consumer reporting agencies, credit bureaus, inspection services, valuation services, and loss history databases.</li>
+        <li><span class="legal-bullet"></span>Claims adjusters, attorneys, medical providers, repair vendors, contractors, and other parties involved in a claim or coverage investigation.</li>
+        <li><span class="legal-bullet"></span>Government agencies, regulators, law enforcement, courts, or other parties when required by law or legal process.</li>
+        <li><span class="legal-bullet"></span>Our affiliates or business partners, where allowed by law and consistent with applicable notice and opt-out requirements.</li>
+        <li><span class="legal-bullet"></span>Other persons or entities with your authorization or at your direction.</li>
+      </ul>
+      <p>We may also disclose information in connection with audits, fraud prevention, servicing, account management, policy placement, program administration, or other purposes permitted by applicable law. Many insurance privacy notices also include a statement that disclosures may be made “as permitted by law” or for ordinary course insurance operations.</p>
+
+      <h2>Your Privacy Rights</h2>
+      <p>Depending on the type of insurance transaction, the laws applicable to your policy, and the nature of the information involved, you may have certain rights regarding your information. NAIC model laws include rights to access, review, and correct recorded personal information, as well as notice requirements for adverse underwriting decisions in many circumstances.</p>
+      <p>Subject to applicable law, you may have the right to:</p>
+      <ul>
+        <li><span class="legal-bullet"></span>Request access to certain personal information we maintain about you.</li>
+        <li><span class="legal-bullet"></span>Request correction, amendment, or deletion of inaccurate information, where legally permitted.</li>
+        <li><span class="legal-bullet"></span>Receive a copy of our privacy practices or an explanation of how we handle information.</li>
+        <li><span class="legal-bullet"></span>Withdraw consent where processing depends on consent, to the extent allowed by law.</li>
+        <li><span class="legal-bullet"></span>Limit or opt out of certain disclosures, where applicable law provides that right.</li>
+        <li><span class="legal-bullet"></span>Request that we communicate with you in a particular format or through a designated representative, where reasonable and allowed by law.</li>
+      </ul>
+      <p>If you submit a written request to access or correct recorded personal information, we may require sufficient information to verify your identity and locate the records. The NAIC model provides structured timeframes and procedures for access and correction requests, though actual rights and deadlines may vary by state and product line.</p>
+
+      <h2>Opt-Out Choices</h2>
+      <p>In some circumstances, you may have the right to opt out of certain disclosures of your information to non-affiliated third parties, especially where the disclosure is not otherwise permitted by law. Insurance privacy frameworks commonly explain the consumer's right to opt out of non-affiliate marketing disclosures and other sharing practices when applicable.</p>
+      <p>If an opt-out right applies, we will provide a clear and conspicuous notice describing:</p>
+      <ul>
+        <li><span class="legal-bullet"></span>The type of information involved.</li>
+        <li><span class="legal-bullet"></span>The categories of non-affiliated third parties receiving it.</li>
+        <li><span class="legal-bullet"></span>The manner in which you may exercise your opt-out choice.</li>
+        <li><span class="legal-bullet"></span>Any applicable deadlines, limitations, or exceptions.</li>
+      </ul>
+      <p>Please note that some disclosures are necessary to administer your insurance request or policy and may not be subject to an opt-out right. These may include disclosures to carriers, service providers, regulators, fraud investigators, or others involved in the processing, placement, servicing, or investigation of your insurance matter.</p>
+
+      <h2>Cookies and Website Data</h2>
+      <p>When you visit our website, we may automatically collect technical information about your device and how you use our site. This may include browser type, operating system, pages viewed, time spent on pages, referring website, general location inferred from IP address, and cookie or similar tracking data.</p>
+      <p>We use this information to:</p>
+      <ul>
+        <li><span class="legal-bullet"></span>Maintain website functionality and security.</li>
+        <li><span class="legal-bullet"></span>Understand site traffic and usage patterns.</li>
+        <li><span class="legal-bullet"></span>Improve page performance, content, and navigation.</li>
+        <li><span class="legal-bullet"></span>Support lead capture, form functionality, and communication preferences.</li>
+      </ul>
+      <p>You may be able to disable cookies through your browser settings, but doing so may affect website performance or certain features. If we use analytics or advertising technologies, they may collect data subject to their own privacy policies and settings.</p>
+
+      <h2>Email, Text, and Electronic Communications</h2>
+      <p>By providing your contact information, you may receive emails, texts, calls, or other electronic communications related to quotes, policy servicing, claims, reminders, account notices, and marketing, subject to applicable law and your preferences.</p>
+      <p>You may opt out of marketing emails by using the unsubscribe instructions in the message or by contacting us directly. Service-related communications may still be sent when necessary to provide requested insurance services or to comply with legal obligations. Tennessee law also recognizes consumer controls around electronic mailing consent in some contexts, so electronic delivery preferences may matter depending on the communication and transaction.</p>
+
+      <h2>Information Security</h2>
+      <p>We maintain administrative, technical, and physical safeguards designed to protect information against unauthorized access, use, alteration, and disclosure. The NAIC notes that state regulators continue to focus on data security, privacy, and the risks created by technology and AI in the insurance sector.</p>
+      <p>Our safeguards may include:</p>
+      <ul>
+        <li><span class="legal-bullet"></span>Access controls and role-based permissions.</li>
+        <li><span class="legal-bullet"></span>Password protection and multi-factor authentication where available.</li>
+        <li><span class="legal-bullet"></span>Encryption of data in transit and, where appropriate, at rest.</li>
+        <li><span class="legal-bullet"></span>Secure storage and restricted retention practices.</li>
+        <li><span class="legal-bullet"></span>Vendor oversight and contractual privacy/security requirements.</li>
+        <li><span class="legal-bullet"></span>Employee training on confidentiality, privacy, and phishing awareness.</li>
+        <li><span class="legal-bullet"></span>Reasonable monitoring, logging, and incident response procedures.</li>
+      </ul>
+      <p>No method of transmission or storage is completely secure, and we cannot guarantee absolute security. However, we take reasonable steps, in compliance with current industry standards, to protect the information entrusted to us.</p>
+
+      <h2>Data Retention</h2>
+      <p>We retain information for as long as reasonably necessary to fulfill the purposes for which it was collected, including servicing your account, responding to claims or disputes, complying with legal and regulatory obligations, maintaining business records, and enforcing our agreements.</p>
+      <p>Retention periods may vary depending on:</p>
+      <ul>
+        <li><span class="legal-bullet"></span>The type of insurance product or transaction.</li>
+        <li><span class="legal-bullet"></span>Applicable state and federal recordkeeping rules.</li>
+        <li><span class="legal-bullet"></span>Carrier, licensing, tax, or audit requirements.</li>
+        <li><span class="legal-bullet"></span>Claims, litigation, or regulatory investigation holds.</li>
+        <li><span class="legal-bullet"></span>Business continuity and fraud prevention needs.</li>
+      </ul>
+      <p>When information is no longer needed, we will dispose of it in a manner intended to protect confidentiality, subject to applicable law and operational requirements.</p>
+
+      <h2>Third-Party Links and Services</h2>
+      <p>Our website, email communications, or online forms may link to third-party websites, portals, or services that are not operated by us. We are not responsible for the privacy practices, security, or content of those third parties.</p>
+      <p>If you submit information through a third-party platform, such as a carrier portal, e-signature service, payment processor, or scheduling tool, that information may also be subject to the third party's privacy policy and terms. We encourage you to review those policies before providing information.</p>
+
+      <h2>Children's Privacy</h2>
+      <p>Our services are intended for adults and are not directed to children under 13. We do not knowingly collect personal information from children under 13 through our website or general insurance processes without appropriate adult involvement and consent, where required.</p>
+      <p>If we learn that we have collected information from a child in a manner not permitted by law, we will take reasonable steps to delete it or otherwise handle it as required.</p>
+
+      <h2>State-Specific Rights</h2>
+      <p>Privacy laws may vary by state, and your rights may depend on where you live, the insurance product involved, and whether the information is collected in connection with personal, family, or household insurance needs. The NAIC model act applies to insurance transactions involving natural persons and is designed to be implemented through state law, so state-specific rules can affect notice timing, disclosure limits, and access rights.</p>
+      <p>If you reside in a state with additional privacy rights, we will comply with those rights to the extent applicable. This may include special rights related to consumer reporting, data access, correction, deletion, sharing, or electronic communication preferences.</p>
+
+      <h2>Changes to This Policy</h2>
+      <p>We may update this Privacy Policy from time to time to reflect changes in our practices, technology, legal obligations, or business operations. When we make material changes, we will update the effective date and may provide additional notice as required by law or contract.</p>
+      <p>Your continued use of our website or services after a revised policy becomes effective means that you acknowledge the updated terms, to the extent permitted by law.</p>
+
+      <h2>Contact Information</h2>
+      <p>If you have questions about this Privacy Policy or wish to exercise a privacy right, contact us at:</p>
+      <div class="legal-contact">
+        <p>Sebastian Williamson Insurance Solutions</p>
+        <p>2550 Meridian Blvd., Suite 200</p>
+        <p>Franklin, Tennessee 37067</p>
+        <p>Phone: <a href="tel:6158619153">(615) 861-9153</a></p>
+        <p>Email: <a href="mailto:info@sebastianwilliamson.com">info@sebastianwilliamson.com</a></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="nav-logo">
+            <img src="SWIS Logo - 2023-01(1500-268px).png" width="325">
+          </div>
+          <p>An independent insurance agency proudly serving the Volunteer State. We shop. You save. You're covered.</p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="index.html#quote">Auto Insurance</a></li>
+            <li><a href="index.html#quote">Home Insurance</a></li>
+            <li><a href="index.html#quote">Renters Insurance</a></li>
+            <li><a href="index.html#quote">Life Insurance</a></li>
+            <li><a href="index.html#quote">Personal Umbrella</a></li>
+            <li><a href="index.html#quote">Commercial</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="index.html#about">About Us</a></li>
+            <li><a href="index.html#process">How It Works</a></li>
+            <li><a href="index.html#testimonials">Reviews</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="tel:6158619153">615-861-9153</a></li>
+            <li><a href="mailto:info@sebastianwilliamson.com">info@sebastianwilliamson.com</a></li>
+            <li><a href="index.html#quote">Request a Consultation</a></li>
+            <li><a href="https://www.linkedin.com/company/sebastian-williamson-insurance-solutions-llc/about/" target="_blank" rel="noopener">LinkedIn</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2026 Sebastian Williamson Insurance Solutions, LLC. All rights reserved.</p>
+        <p>
+          <a href="privacy_policy.html">Privacy Policy</a> &nbsp;·&nbsp;
+          <a href="terms_of_use.html">Terms of Use</a> &nbsp;·&nbsp;
+          Franklin, TN 37067
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const navLinks  = document.getElementById('navLinks');
+    hamburger.addEventListener('click', () => {
+      navLinks.classList.toggle('open');
+    });
+    navLinks.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => navLinks.classList.remove('open'));
+    });
+  </script>
+</body>
+</html>

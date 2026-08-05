@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Terms of Use | Sebastian Williamson Insurance Solutions</title>
+  <meta name="description" content="Website Terms of Use for Sebastian Williamson Insurance Solutions (SWIS), an independent insurance agency serving Tennessee." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="icon" type="image/x-icon" href="SWIS Round Logo-200px.png">
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy:       #0D2340;
+      --navy-mid:   #163255;
+      --navy-light: #1E4A7A;
+      --gold:       #C8973A;
+      --gold-light: #E0B56A;
+      --cream:      #F8F5EF;
+      --cream-dark: #EDE8DE;
+      --text-dark:  #0D1E30;
+      --text-mid:   #3D5470;
+      --text-light: #7A90A8;
+      --white:      #FFFFFF;
+      --section-gap: 6rem;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      color: var(--text-dark);
+      background: var(--white);
+      overflow-x: hidden;
+    }
+
+    a { text-decoration: none; }
+
+    /* ── Topbar ── */
+    .topbar {
+      background: var(--navy);
+      color: #afc5db;
+      font-size: 13px;
+      letter-spacing: 0.02em;
+      padding: 0.45rem 2rem;
+      display: flex;
+      justify-content: flex-end;
+      gap: 2rem;
+    }
+    .topbar a { color: #afc5db; text-decoration: none; transition: color .2s; }
+    .topbar a:hover { color: var(--gold-light); }
+    .topbar span { display: flex; align-items: center; gap: 6px; }
+
+    /* ── Nav ── */
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: var(--white);
+      border-bottom: 1px solid #e4e0d8;
+      padding: 0 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 72px;
+    }
+    .nav-links { display: flex; align-items: center; gap: 2rem; list-style: none; }
+    .nav-links a { font-size: 14.5px; font-weight: 500; color: var(--text-mid); text-decoration: none; transition: color .2s; }
+    .nav-links a:hover { color: var(--navy); }
+    .nav-cta {
+      background: var(--gold);
+      color: var(--white) !important;
+      padding: 10px 22px;
+      border-radius: 4px;
+      font-weight: 600 !important;
+      transition: background .2s !important;
+    }
+    .nav-cta:hover { background: var(--gold-light) !important; color: var(--white) !important; }
+
+    .hamburger { display: none; cursor: pointer; background: none; border: none; flex-direction: column; gap: 5px; }
+    .hamburger span { display: block; width: 24px; height: 2px; background: var(--navy); border-radius: 2px; transition: all .3s; }
+
+    /* ── Page header banner ── */
+    .legal-hero {
+      background: var(--navy);
+      position: relative;
+      overflow: hidden;
+      padding: 3.6rem 2rem;
+    }
+    .legal-hero-bg {
+      position: absolute; inset: 0;
+      background: linear-gradient(135deg, rgba(13,35,64,0.97) 0%, rgba(22,50,85,0.90) 60%, rgba(30,74,122,0.75) 100%);
+    }
+    .legal-hero-inner {
+      position: relative; z-index: 2;
+      max-width: 900px; margin: 0 auto;
+    }
+    .legal-eyebrow {
+      display: inline-flex; align-items: center; gap: 10px;
+      font-size: 13px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1.2rem;
+    }
+    .legal-eyebrow::before { content: ''; display: block; width: 24px; height: 1.5px; background: var(--gold); }
+    .legal-hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 700;
+      color: var(--white);
+      letter-spacing: -0.01em;
+      margin-bottom: 0.9rem;
+    }
+    .legal-hero p {
+      font-size: 0.95rem;
+      font-weight: 300;
+      color: #afc5db;
+      max-width: 600px;
+      line-height: 1.7;
+    }
+
+    /* ── Legal content ── */
+    .legal-wrap { background: var(--cream); padding: 4rem 2rem; }
+    .legal-card {
+      max-width: 900px; margin: 0 auto;
+      background: var(--white);
+      border: 1px solid var(--cream-dark);
+      border-radius: 10px;
+      padding: 3rem;
+    }
+    .legal-card h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-top: 2.4rem;
+      margin-bottom: 0.9rem;
+      padding-top: 1.6rem;
+      border-top: 1px solid var(--cream-dark);
+    }
+    .legal-card > p:first-of-type,
+    .legal-card h2:first-child { margin-top: 0; padding-top: 0; border-top: none; }
+    .legal-card p {
+      font-size: 14.5px;
+      font-weight: 300;
+      color: var(--text-mid);
+      line-height: 1.85;
+      margin-bottom: 1.1rem;
+    }
+    .legal-card ul {
+      list-style: none;
+      display: flex; flex-direction: column; gap: 0.7rem;
+      margin: 1rem 0 1.4rem 0;
+    }
+    .legal-card ul li {
+      display: flex; align-items: flex-start; gap: 12px;
+      font-size: 14.5px; font-weight: 300;
+      color: var(--text-mid); line-height: 1.75;
+    }
+    .legal-bullet {
+      width: 7px; height: 7px; flex-shrink: 0;
+      margin-top: 8px;
+      background: var(--gold);
+      border-radius: 50%;
+    }
+    .legal-card strong { color: var(--navy); font-weight: 600; }
+    .legal-contact {
+      margin-top: 2.4rem;
+      padding: 1.6rem 1.8rem;
+      background: var(--cream);
+      border: 1px solid var(--cream-dark);
+      border-radius: 8px;
+    }
+    .legal-contact p { margin-bottom: 0.3rem; font-size: 14px; color: var(--navy); font-weight: 500; }
+    .legal-contact p:first-child { font-weight: 700; }
+    .legal-contact a { color: var(--navy); }
+    .legal-contact a:hover { text-decoration: underline; }
+    .legal-updated { font-size: 12.5px; color: var(--text-light); margin-top: 2.2rem; text-align: right; }
+
+    /* ── Footer ── */
+    footer {
+      background: var(--navy);
+      color: #8aacca;
+      padding: 4rem 2rem 2rem;
+    }
+    .footer-inner { max-width: 1200px; margin: 0 auto; }
+    .footer-top {
+      display: grid;
+      grid-template-columns: 1.6fr 1fr 1fr 1fr;
+      gap: 3rem;
+      padding-bottom: 2.6rem;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .footer-brand .logo-text .brand { color: var(--white); }
+    .footer-brand .logo-text .sub { color: #7a9ab8; }
+    .footer-brand p {
+      font-size: 13.5px; font-weight: 300; color: #7a9ab8;
+      line-height: 1.75; margin-top: 1.2rem; max-width: 320px;
+    }
+    .footer-col h4 {
+      font-size: 13px; font-weight: 700; color: var(--white);
+      text-transform: uppercase; letter-spacing: 0.06em;
+      margin-bottom: 1.2rem;
+    }
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 0.65rem; }
+    .footer-col a { font-size: 13.5px; color: #7a9ab8; text-decoration: none; transition: color .2s; }
+    .footer-col a:hover { color: var(--gold-light); }
+    .footer-bottom {
+      padding-top: 1.8rem;
+      display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1rem;
+    }
+    .footer-bottom p { font-size: 12.5px; color: #4f6e8a; }
+    .footer-bottom a { color: #4f6e8a; text-decoration: none; }
+    .footer-bottom a:hover { color: #7a9ab8; }
+
+    nav img { max-width: 425px; width: 100%; height: auto; }
+    .footer-brand img { max-width: 325px; width: 100%; height: auto; }
+
+    /* ── Mobile nav ── */
+    @media (max-width: 900px) {
+      .nav-links { display: none; flex-direction: column; gap: 0; position: absolute; top: 72px; left: 0; right: 0; background: var(--white); border-bottom: 1px solid #e4e0d8; padding: 1rem 0; }
+      .nav-links.open { display: flex; }
+      .nav-links li { width: 100%; }
+      .nav-links a { display: block; padding: 12px 2rem; }
+      .nav-cta { margin: 8px 2rem; text-align: center; border-radius: 4px; }
+      .hamburger { display: flex; }
+      nav { position: relative; }
+      .footer-top { grid-template-columns: 1fr 1fr; }
+      :root { --section-gap: 4rem; }
+      .legal-card { padding: 2rem; }
+    }
+    @media (max-width: 560px) {
+      .footer-top { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 640px) {
+      .topbar { justify-content: center; flex-wrap: wrap; gap: 0.6rem 1.5rem; padding: 0.5rem 1rem; font-size: 12px; text-align: center; }
+      nav { padding: 0 1.25rem; }
+      nav img { max-width: 300px; }
+      .footer-brand img { max-width: 300px; }
+      .legal-hero { padding: 2.6rem 1.25rem; }
+      .legal-wrap { padding: 2.6rem 1.25rem; }
+      .legal-card { padding: 1.6rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Topbar -->
+  <div class="topbar">
+    <span>
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+      <a href="mailto:info@sebastianwilliamson.com ?subject=Request%20a%20Consultation">info@sebastianwilliamson.com</a>
+    </span>
+    <span>
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.91a16 16 0 006.08 6.08l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+      <a href="tel:6158619153">615-861-9153</a>
+    </span>
+  </div>
+
+  <!-- Nav -->
+  <nav>
+    <a href="index.html"><img src="SWIS Logo - 2023-01(1500-268px).png" width="425"></a>
+
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="commercial_insurance.html">Commercial Insurance</a></li>
+      <li><a href="personal_insurance.html">Personal Insurance</a></li>
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="index.html#testimonials">Reviews</a></li>
+      <li><a href="https://customerservice.agentinsure.com/EzLynxCustomerService/web/sebastwilinsso/account/login" target="_blank" rel="noopener noreferrer">Client Center
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+        <polyline points="15 3 21 3 21 9"></polyline>
+        <line x1="10" y1="14" x2="21" y2="3"></line>
+      </svg></a></li>
+      <li><a href="index.html#quote" class="nav-cta">Contact Us</a></li>
+    </ul>
+
+    <button class="hamburger" id="hamburger" aria-label="Toggle navigation">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- Page Header -->
+  <section class="legal-hero">
+    <div class="legal-hero-bg"></div>
+    <div class="legal-hero-inner">
+      <div class="legal-eyebrow">Legal</div>
+      <h1>Website Terms of Use</h1>
+      <p>Sebastian Williamson Insurance Solutions LLC — the terms that govern your access to and use of this website.</p>
+    </div>
+  </section>
+
+  <!-- Legal Content -->
+  <section class="legal-wrap">
+    <div class="legal-card">
+      <p>These Terms of Use (“Terms”) govern your access to and use of the website operated by Sebastian Williamson Insurance Solutions (“Company,” “we,” “us,” or “our”). By accessing or using this website, you agree to be bound by these Terms and all applicable laws and regulations. If you do not agree, do not use this website. Website terms commonly operate as the legal “house rules” for permitted use, prohibited conduct, site content, and liability limitations.</p>
+
+      <h2>Website Purpose</h2>
+      <p>This website is provided for general informational purposes only and allows visitors to learn about our insurance services, request quotes, submit forms, communicate with our agency, and access related resources. Insurance agency websites often include a statement that online submissions are for informational or quoting purposes and do not themselves bind coverage.</p>
+      <p>Nothing on this website should be interpreted as a guarantee of coverage, a promise to insure, an offer to sell insurance, or legal, tax, accounting, or financial advice. Coverage can only be confirmed through a licensed agent and is subject to the terms, conditions, exclusions, underwriting guidelines, and approval of the applicable insurance carrier.</p>
+
+      <h2>Acceptance of Terms</h2>
+      <p>By using this website, you represent that you are at least 18 years old or are using the site under the supervision of a parent or legal guardian. You also represent that you have the legal capacity to agree to these Terms and to use this website in compliance with them.</p>
+      <p>We may revise these Terms at any time by posting an updated version on this website. Your continued use of the website after changes are posted constitutes acceptance of the revised Terms.</p>
+
+      <h2>Permitted Use</h2>
+      <p>You may use this website only for lawful purposes and in a manner consistent with these Terms. Permitted use includes reviewing information, submitting inquiries, requesting quotes, completing forms, and communicating with our office for legitimate insurance-related purposes.</p>
+      <p>You agree not to use this website in any way that could harm the website, interfere with its operation, compromise security, or disrupt access for others. Standard website terms typically restrict scraping, interference, reverse engineering, misuse of content, and unlawful activity.</p>
+
+      <h2>Prohibited Conduct</h2>
+      <p>You agree that you will not, and will not attempt to:</p>
+      <ul>
+        <li><span class="legal-bullet"></span>Use the website for any unlawful, fraudulent, abusive, harassing, defamatory, or discriminatory purpose.</li>
+        <li><span class="legal-bullet"></span>Submit false, misleading, incomplete, or unauthorized information.</li>
+        <li><span class="legal-bullet"></span>Impersonate another person or misrepresent your identity or relationship to an insured, applicant, or claimant.</li>
+        <li><span class="legal-bullet"></span>Attempt to gain unauthorized access to systems, accounts, data, or networks.</li>
+        <li><span class="legal-bullet"></span>Use robots, spiders, scrapers, crawlers, or other automated tools to collect website content without our written permission.</li>
+        <li><span class="legal-bullet"></span>Introduce viruses, malware, destructive code, or other harmful material.</li>
+        <li><span class="legal-bullet"></span>Interfere with the website's security, functionality, or performance.</li>
+        <li><span class="legal-bullet"></span>Reverse engineer, decompile, or otherwise attempt to discover source code or underlying structure, except where prohibited by law.</li>
+        <li><span class="legal-bullet"></span>Use the website or its content for commercial exploitation without our prior written consent.</li>
+        <li><span class="legal-bullet"></span>Upload or transmit content that violates the rights of any person or entity.</li>
+      </ul>
+      <p>We reserve the right to suspend or terminate access to the website if we believe, in our sole discretion, that your use violates these Terms or creates risk to us, our users, our carriers, or our systems.</p>
+
+      <h2>No Binding Authority</h2>
+      <p>Unless expressly stated in writing by a licensed representative of our agency and authorized by the applicable insurance carrier, nothing submitted through this website binds, changes, amends, or reinstates insurance coverage. Agency website disclaimers commonly state that online forms, emails, voicemails, and similar submissions do not by themselves alter coverage.</p>
+      <p>Any quote or indication provided through the website is preliminary and subject to verification of information, underwriting review, carrier approval, and payment of any required premium.</p>
+
+      <h2>Information You Submit</h2>
+      <p>If you submit information through our website, you agree that the information is accurate, current, and complete to the best of your knowledge. You also confirm that you have the right to provide the information and to authorize its use for insurance-related purposes.</p>
+      <p>Do not submit sensitive information through unsecured channels unless specifically instructed to do so. We may use the information you provide to respond to your request, evaluate coverage options, service policies, comply with legal obligations, and communicate with carriers or third parties involved in your insurance transaction. Website disclaimers commonly state that submitted information will be used for insurance purposes and handled confidentially.</p>
+
+      <h2>Privacy</h2>
+      <p>Your use of this website is also governed by our <a href="privacy-policy.html" style="color:var(--navy); font-weight:600;">Privacy Policy</a>, which explains how we collect, use, disclose, and protect information. By using the website, you acknowledge that you have had the opportunity to review our Privacy Policy.</p>
+      <p>If there is any inconsistency between these Terms and our Privacy Policy regarding privacy-related matters, the Privacy Policy will control to the extent of that issue.</p>
+
+      <h2>Intellectual Property</h2>
+      <p>All content on this website, including text, graphics, logos, images, page design, icons, layout, software, and other materials, is owned by or licensed to Sebastian Williamson Insurance Solutions and is protected by applicable intellectual property laws.</p>
+      <p>You may view, download, or print website content for your personal, non-commercial use only, provided that you do not modify the content and you keep all proprietary notices intact. You may not reproduce, distribute, publish, display, transmit, sell, license, or create derivative works from any website content without our prior written permission.</p>
+      <p>Any trademarks, service marks, names, or logos displayed on the website are the property of their respective owners. No license or right to use any mark is granted by implication or otherwise unless expressly authorized in writing.</p>
+
+      <h2>Third-Party Links and Tools</h2>
+      <p>This website may contain links to third-party websites, portals, calculators, forms, scheduling tools, or other resources. These links are provided for convenience only. We do not control and are not responsible for the content, accuracy, security, policies, or practices of any third party. Agency website disclaimers often state that external links are provided as a convenience and used at the user's own risk.</p>
+      <p>Your use of third-party websites is subject to their own terms and privacy policies, not ours. We are not responsible for any loss, damage, or dispute arising from your use of a third-party site or service.</p>
+
+      <h2>Disclaimer of Warranties</h2>
+      <p>This website and all content are provided on an “as is” and “as available” basis, without warranties of any kind, express or implied, to the fullest extent permitted by law. Common insurance website disclaimers state that site materials are offered without warranty and are not a substitute for policy language or professional advice.</p>
+      <p>To the fullest extent permitted by law, we disclaim all warranties, including implied warranties of merchantability, fitness for a particular purpose, title, non-infringement, accuracy, completeness, reliability, and uninterrupted availability.</p>
+      <p>We do not warrant that:</p>
+      <ul>
+        <li><span class="legal-bullet"></span>The website will always be secure, available, or error-free.</li>
+        <li><span class="legal-bullet"></span>The information on the website is complete, current, or suitable for your specific situation.</li>
+        <li><span class="legal-bullet"></span>Any defects will be corrected.</li>
+        <li><span class="legal-bullet"></span>The website or servers are free of viruses or harmful components.</li>
+      </ul>
+
+      <h2>Insurance and Advice Disclaimer</h2>
+      <p>Information on this website is provided for general informational purposes only and should not be relied upon as a substitute for individualized advice from a licensed insurance professional. Insurance coverage depends on carrier forms, underwriting, endorsements, exclusions, state law, and the facts of each individual case.</p>
+      <p>You should review your policy documents carefully and consult with a licensed agent about your specific situation. This website does not provide legal, tax, accounting, or investment advice.</p>
+
+      <h2>Limitation of Liability</h2>
+      <p>To the fullest extent permitted by law, Sebastian Williamson Insurance Solutions and its owners, officers, employees, agents, contractors, affiliates, successors, and assigns will not be liable for any indirect, incidental, special, consequential, exemplary, or punitive damages arising out of or related to your use of, or inability to use, this website.</p>
+      <p>This limitation applies whether the claim is based on contract, tort, negligence, strict liability, statute, or any other legal theory, even if we have been advised of the possibility of such damages. Where liability cannot be excluded by law, our liability will be limited to the minimum amount permitted under applicable law.</p>
+
+      <h2>Indemnification</h2>
+      <p>You agree to defend, indemnify, and hold harmless Sebastian Williamson Insurance Solutions and its owners, officers, employees, agents, contractors, affiliates, successors, and assigns from and against any claims, damages, losses, liabilities, costs, and expenses, including reasonable attorneys' fees, arising from or related to:</p>
+      <ul>
+        <li><span class="legal-bullet"></span>Your use of the website.</li>
+        <li><span class="legal-bullet"></span>Your violation of these Terms.</li>
+        <li><span class="legal-bullet"></span>Your violation of any law or third-party right.</li>
+        <li><span class="legal-bullet"></span>Any content or information you submit through the website.</li>
+        <li><span class="legal-bullet"></span>Your misuse of any form, tool, or service made available through the website.</li>
+      </ul>
+
+      <h2>User Communications</h2>
+      <p>If you submit comments, questions, documents, or other materials to us, you grant us the right to use, store, reproduce, and process that information as reasonably necessary to respond to your request, provide insurance services, comply with law, and improve our operations.</p>
+      <p>Unless prohibited by law or by a separate agreement, we may retain communications and records for legal, compliance, service, quality assurance, and audit purposes.</p>
+
+      <h2>Electronic Communications</h2>
+      <p>By contacting us through the website, you consent to receive communications from us electronically, including email or other digital formats, where permitted by law. Some Tennessee laws recognize electronic communication consents and withdrawal rights in specific contexts.</p>
+      <p>You are responsible for maintaining a valid email address and for monitoring messages sent to the contact information you provide. We are not responsible for messages filtered as spam, blocked by your provider, or not received because of incorrect information you submitted.</p>
+
+      <h2>Security</h2>
+      <p>We take reasonable measures to protect the website and information submitted through it, but no website, system, or transmission over the internet is completely secure. If you believe your interaction with us may have been compromised, contact us immediately using the information listed below.</p>
+      <p>You are responsible for maintaining the confidentiality of any credentials, passwords, or access information associated with your use of the website, if applicable. You agree to notify us promptly of any unauthorized access or suspected security incident related to your use of the website.</p>
+
+      <h2>Geographic Scope</h2>
+      <p>This website is intended for use by individuals located in the United States, and specifically for users seeking insurance-related information in jurisdictions where we are licensed or otherwise authorized to operate. Products, coverages, and services may not be available in all states, and eligibility may vary by location and underwriting criteria. Agency disclaimers commonly note that not all coverages are available in every state.</p>
+      <p>If you access the website from outside the United States, you do so on your own initiative and are responsible for complying with local laws.</p>
+
+      <h2>Governing Law</h2>
+      <p>These Terms and your use of the website will be governed by and construed in accordance with the laws of the State of Tennessee, without regard to conflict-of-law principles, except where applicable federal law provides otherwise.</p>
+      <p>Any legal action arising out of or relating to the website or these Terms shall be brought in a court of competent jurisdiction located in Tennessee, unless a different forum is required by applicable law.</p>
+
+      <h2>Severability</h2>
+      <p>If any provision of these Terms is found to be invalid, unlawful, or unenforceable, that provision will be enforced to the maximum extent permitted and the remaining provisions will continue in full force and effect.</p>
+
+      <h2>Entire Agreement</h2>
+      <p>These Terms, together with our Privacy Policy and any other legal notices posted on the website, constitute the entire agreement between you and us regarding use of the website, to the extent permitted by law.</p>
+
+      <h2>Contact Information</h2>
+      <p>If you have questions about these Terms, you may contact us at:</p>
+      <div class="legal-contact">
+        <p>Sebastian Williamson Insurance Solutions</p>
+        <p>2550 Meridian Blvd., Suite 200</p>
+        <p>Franklin, Tennessee 37067</p>
+        <p>Phone: <a href="tel:6158619153">(615) 861-9153</a></p>
+        <p>Email: <a href="mailto:info@sebastianwilliamson.com">info@sebastianwilliamson.com</a></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="nav-logo">
+            <img src="SWIS Logo - 2023-01(1500-268px).png" width="325">
+          </div>
+          <p>An independent insurance agency proudly serving the Volunteer State. We shop. You save. You're covered.</p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="index.html#quote">Auto Insurance</a></li>
+            <li><a href="index.html#quote">Home Insurance</a></li>
+            <li><a href="index.html#quote">Renters Insurance</a></li>
+            <li><a href="index.html#quote">Life Insurance</a></li>
+            <li><a href="index.html#quote">Personal Umbrella</a></li>
+            <li><a href="index.html#quote">Commercial</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="index.html#about">About Us</a></li>
+            <li><a href="index.html#process">How It Works</a></li>
+            <li><a href="index.html#testimonials">Reviews</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="tel:6158619153">615-861-9153</a></li>
+            <li><a href="mailto:info@sebastianwilliamson.com">info@sebastianwilliamson.com</a></li>
+            <li><a href="index.html#quote">Request a Consultation</a></li>
+            <li><a href="https://www.linkedin.com/company/sebastian-williamson-insurance-solutions-llc/about/" target="_blank" rel="noopener">LinkedIn</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2026 Sebastian Williamson Insurance Solutions, LLC. All rights reserved.</p>
+        <p>
+          <a href="privacy_policy.html">Privacy Policy</a> &nbsp;·&nbsp;
+          <a href="terms_of_use.html">Terms of Use</a> &nbsp;·&nbsp;
+          Franklin, TN 37067
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const navLinks  = document.getElementById('navLinks');
+    hamburger.addEventListener('click', () => {
+      navLinks.classList.toggle('open');
+    });
+    navLinks.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => navLinks.classList.remove('open'));
+    });
+  </script>
+</body>
+</html>
