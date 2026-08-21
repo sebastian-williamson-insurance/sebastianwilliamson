@@ -180,6 +180,33 @@
     }
     .btn-outline:hover { border-color: rgba(255,255,255,0.7); background: rgba(255,255,255,0.06); }
 
+    .nav-cta.shimmer-btn {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .nav-cta.shimmer-btn::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -150%;
+      width: 50%;
+      height: 100%;
+      background: linear-gradient(
+        100deg,
+        transparent 30%,
+        rgba(255, 255, 255, 0.55) 50%,
+        transparent 70%
+      );
+      animation: shimmer-sweep-btn 10s linear infinite;
+      pointer-events: none;
+    }
+
+    @keyframes shimmer-sweep-btn {
+      0%   { left: -150%; }
+      100% { left: 150%; }
+    }
+
     /* ── Section scaffolding ── */
     section { padding: var(--section-gap) 2rem; }
     .section-inner { max-width: 1200px; margin: 0 auto; }
@@ -483,7 +510,7 @@
         <polyline points="15 3 21 3 21 9"></polyline>
         <line x1="10" y1="14" x2="21" y2="3"></line>
       </svg></a></li>
-      <li><a href="#personalApp" class="nav-cta">Get Started</a></li>
+      <li><a href="#personalApp" class="nav-cta shimmer-btn">Get Started</a></li>
     </ul>
 
     <button class="hamburger" id="hamburger" aria-label="Toggle navigation">
